@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "19384c32f9ac6bca350c76df9a053670",
+    "revision": "b217b7b3c19aa4bb2d5ce1d9afb76395",
     "url": "/icap-management-ui/index.html"
   },
   {
-    "revision": "85be9f60de0a00cb4642",
-    "url": "/icap-management-ui/static/css/main.ab6f1f6d.chunk.css"
+    "revision": "db7d08c6ecfde3fe38f1",
+    "url": "/icap-management-ui/static/css/main.b5f68727.chunk.css"
   },
   {
     "revision": "e3f0eb74a66d8b293311",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/icap-management-ui/static/js/2.54c46607.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "85be9f60de0a00cb4642",
-    "url": "/icap-management-ui/static/js/main.bd914086.chunk.js"
+    "revision": "db7d08c6ecfde3fe38f1",
+    "url": "/icap-management-ui/static/js/main.0665d1ff.chunk.js"
   },
   {
     "revision": "cdcbc7cc709c1fbb6fd5",
