@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.8337fde1.chunk.css",
-    "main.js": "/static/js/main.051ca0ad.chunk.js",
-    "main.js.map": "/static/js/main.051ca0ad.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.ba1b44c0.js",
-    "runtime-main.js.map": "/static/js/runtime-main.ba1b44c0.js.map",
-    "static/js/2.54c46607.chunk.js": "/static/js/2.54c46607.chunk.js",
-    "static/js/2.54c46607.chunk.js.map": "/static/js/2.54c46607.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.d6f846fdfbfff9dddfca204efde213ed.js": "/precache-manifest.d6f846fdfbfff9dddfca204efde213ed.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.8337fde1.chunk.css.map": "/static/css/main.8337fde1.chunk.css.map",
-    "static/js/2.54c46607.chunk.js.LICENSE.txt": "/static/js/2.54c46607.chunk.js.LICENSE.txt",
-    "static/media/index.scss": "/static/media/roboto-regular-webfont.d96d07c1.woff2",
-    "static/media/password-icon.svg": "/static/media/password-icon.1c396cc4.svg",
-    "static/media/user-icon.svg": "/static/media/user-icon.ca13a95d.svg"
+    "main.css": "/icap-management-ui/static/css/main.ab6f1f6d.chunk.css",
+    "main.js": "/icap-management-ui/static/js/main.bd914086.chunk.js",
+    "main.js.map": "/icap-management-ui/static/js/main.bd914086.chunk.js.map",
+    "runtime-main.js": "/icap-management-ui/static/js/runtime-main.b7eb8973.js",
+    "runtime-main.js.map": "/icap-management-ui/static/js/runtime-main.b7eb8973.js.map",
+    "static/js/2.54c46607.chunk.js": "/icap-management-ui/static/js/2.54c46607.chunk.js",
+    "static/js/2.54c46607.chunk.js.map": "/icap-management-ui/static/js/2.54c46607.chunk.js.map",
+    "index.html": "/icap-management-ui/index.html",
+    "precache-manifest.d49f1c2fad085c5d6fb492136b98475b.js": "/icap-management-ui/precache-manifest.d49f1c2fad085c5d6fb492136b98475b.js",
+    "service-worker.js": "/icap-management-ui/service-worker.js",
+    "static/css/main.ab6f1f6d.chunk.css.map": "/icap-management-ui/static/css/main.ab6f1f6d.chunk.css.map",
+    "static/js/2.54c46607.chunk.js.LICENSE.txt": "/icap-management-ui/static/js/2.54c46607.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/icap-management-ui/static/media/roboto-regular-webfont.d96d07c1.woff2",
+    "static/media/password-icon.svg": "/icap-management-ui/static/media/password-icon.1c396cc4.svg",
+    "static/media/user-icon.svg": "/icap-management-ui/static/media/user-icon.ca13a95d.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.ba1b44c0.js",
+    "static/js/runtime-main.b7eb8973.js",
     "static/js/2.54c46607.chunk.js",
-    "static/css/main.8337fde1.chunk.css",
-    "static/js/main.051ca0ad.chunk.js"
+    "static/css/main.ab6f1f6d.chunk.css",
+    "static/js/main.bd914086.chunk.js"
   ]
 }
