@@ -1,27 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "06c87624e8b25e6514409e895cc43600",
+    "revision": "ea51e696d8946e15b723168c5f24eb57",
     "url": "/p-ui-wireframes/index.html"
   },
   {
-    "revision": "fad42728c505a09b4765",
-    "url": "/p-ui-wireframes/static/css/main.69f289fb.chunk.css"
+    "revision": "fe53d93361e675ed1904",
+    "url": "/p-ui-wireframes/static/css/main.d8568280.chunk.css"
   },
   {
-    "revision": "bca97a577f6e870324d4",
-    "url": "/p-ui-wireframes/static/js/2.9570d031.chunk.js"
+    "revision": "ac7940a5b15e45047931",
+    "url": "/p-ui-wireframes/static/js/2.e1695a8e.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/p-ui-wireframes/static/js/2.9570d031.chunk.js.LICENSE.txt"
+    "url": "/p-ui-wireframes/static/js/2.e1695a8e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "fad42728c505a09b4765",
-    "url": "/p-ui-wireframes/static/js/main.9cc00692.chunk.js"
+    "revision": "fe53d93361e675ed1904",
+    "url": "/p-ui-wireframes/static/js/main.33f63846.chunk.js"
   },
   {
     "revision": "0c04abc4f575339b4130",
     "url": "/p-ui-wireframes/static/js/runtime-main.c4dbc24f.js"
+  },
+  {
+    "revision": "2452b6d4a04228308e876655a1dfb34c",
+    "url": "/p-ui-wireframes/static/media/account-name-icon.2452b6d4.svg"
   },
   {
     "revision": "8d2f940327de0760e81a884c65d6a0f3",
@@ -32,6 +36,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/p-ui-wireframes/static/media/allowed-domains-icon.de80f2d4.svg"
   },
   {
+    "revision": "fa808afd9a1227bd3adca878d6d651a4",
+    "url": "/p-ui-wireframes/static/media/change-password-icon.fa808afd.svg"
+  },
+  {
     "revision": "7934177d7578c94caf842d76946d1c12",
     "url": "/p-ui-wireframes/static/media/delete-icon-white.7934177d.svg"
   },
@@ -40,8 +48,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/p-ui-wireframes/static/media/icon-config.08527dcc.svg"
   },
   {
-    "revision": "569746cb5dd399e311d7223d9c34c055",
-    "url": "/p-ui-wireframes/static/media/icon-policies.569746cb.svg"
+    "revision": "b1c6c5b2416cb85d2e62e5889972a3ba",
+    "url": "/p-ui-wireframes/static/media/icon-dashboard.b1c6c5b2.svg"
+  },
+  {
+    "revision": "ed6b1739a823ba77c92feb89455965df",
+    "url": "/p-ui-wireframes/static/media/icon-policies.ed6b1739.svg"
   },
   {
     "revision": "886903f195fff497c0f10d253cc63154",
@@ -54,6 +66,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "cb98cbc73eb0acc18830fc0c8ebe2755",
     "url": "/p-ui-wireframes/static/media/icon-users.cb98cbc7.svg"
+  },
+  {
+    "revision": "3a717dff8020be2e7025ccdd0b87f17a",
+    "url": "/p-ui-wireframes/static/media/logout-icon.3a717dff.svg"
   },
   {
     "revision": "76f0d6f0e99faf47732db918b4af0d2a",
@@ -78,18 +94,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "ac840656d4e6bde8f08e2f9110dcfb57",
     "url": "/p-ui-wireframes/static/media/montserrat-semibold-webfont.ac840656.woff"
-  },
-  {
-    "revision": "2c4621714cd9e130b4ebf5acd7b530bf",
-    "url": "/p-ui-wireframes/static/media/padlock-bar.2c462171.svg"
-  },
-  {
-    "revision": "ccbfcfeb8079ecf551182304a40ddafe",
-    "url": "/p-ui-wireframes/static/media/padlock-body-locked.ccbfcfeb.svg"
-  },
-  {
-    "revision": "81c12fd7ab1b0bcf109f542f88a0016e",
-    "url": "/p-ui-wireframes/static/media/padlock-body.81c12fd7.svg"
   },
   {
     "revision": "1c396cc40ddd4e2ac196bc26ea3a72b9",
@@ -118,14 +122,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "d96d07c1e0f7cdf7a1988dcb0bf6e0e4",
     "url": "/p-ui-wireframes/static/media/roboto-regular-webfont.d96d07c1.woff2"
-  },
-  {
-    "revision": "6b1f0b4a4a108d15a908b053602040a4",
-    "url": "/p-ui-wireframes/static/media/roles-icon-selected.6b1f0b4a.svg"
-  },
-  {
-    "revision": "b4cd7602f6aa55d875c24f2421f14fe2",
-    "url": "/p-ui-wireframes/static/media/roles-icon.b4cd7602.svg"
   },
   {
     "revision": "3bd87f34999c7ee283494d3d853348f9",
