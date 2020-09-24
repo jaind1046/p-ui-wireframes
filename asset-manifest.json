@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/p-ui-wireframes/static/css/main.d8568280.chunk.css",
-    "main.js": "/p-ui-wireframes/static/js/main.33f63846.chunk.js",
-    "main.js.map": "/p-ui-wireframes/static/js/main.33f63846.chunk.js.map",
+    "main.css": "/p-ui-wireframes/static/css/main.8f673125.chunk.css",
+    "main.js": "/p-ui-wireframes/static/js/main.7535aeb7.chunk.js",
+    "main.js.map": "/p-ui-wireframes/static/js/main.7535aeb7.chunk.js.map",
     "runtime-main.js": "/p-ui-wireframes/static/js/runtime-main.c4dbc24f.js",
     "runtime-main.js.map": "/p-ui-wireframes/static/js/runtime-main.c4dbc24f.js.map",
-    "static/js/2.e1695a8e.chunk.js": "/p-ui-wireframes/static/js/2.e1695a8e.chunk.js",
-    "static/js/2.e1695a8e.chunk.js.map": "/p-ui-wireframes/static/js/2.e1695a8e.chunk.js.map",
+    "static/js/2.1d56a5a9.chunk.js": "/p-ui-wireframes/static/js/2.1d56a5a9.chunk.js",
+    "static/js/2.1d56a5a9.chunk.js.map": "/p-ui-wireframes/static/js/2.1d56a5a9.chunk.js.map",
     "index.html": "/p-ui-wireframes/index.html",
-    "precache-manifest.9504a65cc070bbeb0d8660d416da6a8e.js": "/p-ui-wireframes/precache-manifest.9504a65cc070bbeb0d8660d416da6a8e.js",
+    "precache-manifest.3abb78a8274cb24791a578d458b70b50.js": "/p-ui-wireframes/precache-manifest.3abb78a8274cb24791a578d458b70b50.js",
     "service-worker.js": "/p-ui-wireframes/service-worker.js",
-    "static/css/main.d8568280.chunk.css.map": "/p-ui-wireframes/static/css/main.d8568280.chunk.css.map",
-    "static/js/2.e1695a8e.chunk.js.LICENSE.txt": "/p-ui-wireframes/static/js/2.e1695a8e.chunk.js.LICENSE.txt",
+    "static/css/main.8f673125.chunk.css.map": "/p-ui-wireframes/static/css/main.8f673125.chunk.css.map",
+    "static/js/2.1d56a5a9.chunk.js.LICENSE.txt": "/p-ui-wireframes/static/js/2.1d56a5a9.chunk.js.LICENSE.txt",
     "static/media/account-name-icon.svg": "/p-ui-wireframes/static/media/account-name-icon.2452b6d4.svg",
     "static/media/allowed-domains-icon-selected.svg": "/p-ui-wireframes/static/media/allowed-domains-icon-selected.8d2f9403.svg",
     "static/media/allowed-domains-icon.svg": "/p-ui-wireframes/static/media/allowed-domains-icon.de80f2d4.svg",
@@ -35,8 +35,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.c4dbc24f.js",
-    "static/js/2.e1695a8e.chunk.js",
-    "static/css/main.d8568280.chunk.css",
-    "static/js/main.33f63846.chunk.js"
+    "static/js/2.1d56a5a9.chunk.js",
+    "static/css/main.8f673125.chunk.css",
+    "static/js/main.7535aeb7.chunk.js"
   ]
 }
