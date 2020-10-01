@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import TabNav from "../../components/TabNav/TabNav";
-import Tab from "../../components/Tab/Tab";
+import TabNav from "../../components/Tabs/TabNav/TabNav";
+import Tab from "../../components/Tabs/Tab/Tab";
 import classes from "./Config.module.scss";
 
 import AllowedIcon from "../../assets/allowed-domains-icon.svg";
@@ -32,7 +32,7 @@ const Config = () => {
 	];
 
 	return (
-		<div className={classes.Config}>
+		<article className={classes.Config}>
 			<TabNav
 				tabs={tabs}
 				isSelectedTab={selected}
@@ -58,7 +58,7 @@ const Config = () => {
 				</Tab>
 				<Tab isSelected={selected === "System Settings"}>System Settings</Tab>
 			</TabNav>
-		</div>
+		</article>
 	);
 };
 

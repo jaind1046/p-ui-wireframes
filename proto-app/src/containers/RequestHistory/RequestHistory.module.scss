@@ -1,12 +1,22 @@
 .RequestHistory {
+	background: #e6e9ea;
+}
+
+.wrapTable {
 	position: relative;
 	padding: 0 3rem;
+
+	background: #ffffff;
+
+	//border: 1px solid #b6bfc9;
+	//border-radius: 0.6rem;
 }
 
 .table {
 	color: #196480;
 
 	& th {
+		height: 4rem;
 		font-size: 1.2rem;
 		padding: 0;
 
@@ -14,12 +24,17 @@
 	}
 
 	& thead th {
+		position: relative;
 		color: #196480;
 
 		cursor: pointer;
 
-		& p:hover {
-			background: #91e1f3;
+		& .icon {
+			position: absolute;
+			top: 0.5rem;
+			right: 6rem;
+
+			width: 3rem;
 		}
 	}
 

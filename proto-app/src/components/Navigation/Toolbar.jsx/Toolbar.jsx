@@ -77,7 +77,7 @@ const Toolbar = ({ expanded, navExpandedHandler }) => {
 			name: "Change password",
 			icon: changePassIcon,
 			onClickButtonHandler: () => alert("Change password"),
-		},
+		}
 	];
 
 	return (
@@ -96,6 +96,7 @@ const Toolbar = ({ expanded, navExpandedHandler }) => {
 			{isOpen && (
 				<Popup
 					links={accountLinks}
+					externalStyles={classes.popup}
 					openPopupHover={() => setIsOpen(true)}
 					closePopupHover={() => setIsOpen(false)}
 				/>
