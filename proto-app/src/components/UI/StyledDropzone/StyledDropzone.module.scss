@@ -3,9 +3,12 @@ $drop-area-border-radius: 0;
 
 .container {
 	display: flex;
-	flex-direction: column;
 	align-items: center;
+	justify-content: center;
 
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
 	outline: none;
 	border-radius: $drop-area-border-radius;
 }
@@ -29,7 +32,6 @@ $drop-area-border-radius: 0;
 
 	outline: none;
 	transition: border 0.5s ease-in-out;
-	flex: 1;
 
 	&.active {
 		border-color: #2196f3;
