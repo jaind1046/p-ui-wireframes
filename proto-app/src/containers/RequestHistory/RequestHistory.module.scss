@@ -3,13 +3,19 @@
 }
 
 .wrapTable {
-	position: relative;
+	//position: relative;
 	padding: 0 3rem;
 
 	background: #ffffff;
 
-	//border: 1px solid #b6bfc9;
-	//border-radius: 0.6rem;
+	transition: all 0.5s;
+
+	&.notActive {
+		opacity: 0.5;
+		filter: blur(0.2rem);
+		pointer-events: none;
+		transition: all 0.5s;
+	}
 }
 
 .table {

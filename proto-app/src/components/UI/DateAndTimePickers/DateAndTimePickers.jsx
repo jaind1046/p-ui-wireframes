@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { TextField as MuiTextField } from "@material-ui/core";
 
 import classes from "./DateAndTimePickers.module.scss";
+import Popup from "../Popup/Popup";
 
 const useStyles = makeStyles((theme) => ({
 	container: {
@@ -17,7 +18,16 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-const DateAndTimePickers = () => {
+const timeIntervalList = [
+	{ name: "1 Hour" },
+	{ name: "12 Hours" },
+	{ name: "24 Hours" },
+	{ name: "Last 7 Days" },
+	{ name: "Custom Range" },
+];
+
+const DateAndTimePickers = ({ externalStyles }) => {
+	const [isOpen, setIsOpen] = useState(false);
 	const classesTextField = useStyles();
 
 	const date = new Date();
@@ -28,11 +38,16 @@ const DateAndTimePickers = () => {
 	earlierDate = earlierDate.toISOString().substr(0, 19);
 
 	return (
-		<div className={classes.DateAndTimePickers}>
-			<span>Date/Time</span>
+		<div className={[classes.DateAndTimePickers, externalStyles].join(" ")}>
+			<button
+				className={classes.intervalButton}
+				onClick={() => setIsOpen((prevState) => !prevState)}
+			>
+				Date/Time
+			</button>
 			<form className={classesTextField.container} noValidate>
 				<MuiTextField
-					id="datetime-local"
+					id="datetime-local-left"
 					margin="none"
 					type="datetime-local"
 					defaultValue={earlierDate}
@@ -45,7 +60,7 @@ const DateAndTimePickers = () => {
 			<p>-</p>
 			<form className={classesTextField.container} noValidate>
 				<MuiTextField
-					id="datetime-local"
+					id="datetime-local-right"
 					margin="none"
 					type="datetime-local"
 					defaultValue={currentDate}
@@ -55,6 +70,13 @@ const DateAndTimePickers = () => {
 					}}
 				/>
 			</form>
+			{isOpen && (
+				<Popup
+					links={timeIntervalList}
+					externalStyles={classes.popup}
+					closePopupHover={() => setIsOpen((prevState) => !prevState)}
+				/>
+			)}
 		</div>
 	);
 };
