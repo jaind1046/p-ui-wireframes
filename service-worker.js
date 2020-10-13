@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "https://k8-proxy.github.io/p-ui-wireframes/precache-manifest.ac9561fda3848e7dcd0d18d55803c0b7.js"
+  "https://k8-proxy.github.io/p-ui-wireframes/precache-manifest.2b0b56386ddf1db0537687a3c9c7b251.js"
 );
 
 self.addEventListener('message', (event) => {

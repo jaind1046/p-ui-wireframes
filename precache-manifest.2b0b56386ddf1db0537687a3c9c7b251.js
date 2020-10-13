@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b98e597488ebf7ee94f8a039ad6c883a",
+    "revision": "875e45e6014e35f5651dbd3257aad41a",
     "url": "https://k8-proxy.github.io/p-ui-wireframes/index.html"
   },
   {
-    "revision": "4dcb9b385a34b7dff1b7",
-    "url": "https://k8-proxy.github.io/p-ui-wireframes/static/css/main.d18398b0.chunk.css"
+    "revision": "4630621d8377de746e30",
+    "url": "https://k8-proxy.github.io/p-ui-wireframes/static/css/main.2203bb79.chunk.css"
   },
   {
-    "revision": "45aa32f8dc9a686d494c",
-    "url": "https://k8-proxy.github.io/p-ui-wireframes/static/js/2.c4e1b2c8.chunk.js"
+    "revision": "26481d49d8fee2feee57",
+    "url": "https://k8-proxy.github.io/p-ui-wireframes/static/js/2.35142c48.chunk.js"
   },
   {
     "revision": "c46ade285a7bd9e73d4de71c9509bd70",
-    "url": "https://k8-proxy.github.io/p-ui-wireframes/static/js/2.c4e1b2c8.chunk.js.LICENSE.txt"
+    "url": "https://k8-proxy.github.io/p-ui-wireframes/static/js/2.35142c48.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4dcb9b385a34b7dff1b7",
-    "url": "https://k8-proxy.github.io/p-ui-wireframes/static/js/main.aed5b5c4.chunk.js"
+    "revision": "4630621d8377de746e30",
+    "url": "https://k8-proxy.github.io/p-ui-wireframes/static/js/main.60877c0f.chunk.js"
   },
   {
     "revision": "9294315f35d6d0e99779",
@@ -42,6 +42,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "7934177d7578c94caf842d76946d1c12",
     "url": "https://k8-proxy.github.io/p-ui-wireframes/static/media/delete-icon-white.7934177d.svg"
+  },
+  {
+    "revision": "4b61817ce2d7ca5c9382b54a3a4a5ecf",
+    "url": "https://k8-proxy.github.io/p-ui-wireframes/static/media/drag-drop-area.4b61817c.svg"
   },
   {
     "revision": "67793a9e7df0f69fc31a0e6df4ee51c4",
@@ -108,6 +112,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://k8-proxy.github.io/p-ui-wireframes/static/media/password-icon.1c396cc4.svg"
   },
   {
+    "revision": "af64f7c83352c5ed401df865661274e5",
+    "url": "https://k8-proxy.github.io/p-ui-wireframes/static/media/refresh-button.af64f7c8.svg"
+  },
+  {
     "revision": "baf8fad1c956333f396138e09af9be32",
     "url": "https://k8-proxy.github.io/p-ui-wireframes/static/media/roboto-light-webfont.baf8fad1.woff"
   },
@@ -130,6 +138,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "d96d07c1e0f7cdf7a1988dcb0bf6e0e4",
     "url": "https://k8-proxy.github.io/p-ui-wireframes/static/media/roboto-regular-webfont.d96d07c1.woff2"
+  },
+  {
+    "revision": "acc3c9fa0ef445a8419f0ebeeb37301e",
+    "url": "https://k8-proxy.github.io/p-ui-wireframes/static/media/sanitised-file.acc3c9fa.svg"
   },
   {
     "revision": "3bd87f34999c7ee283494d3d853348f9",
