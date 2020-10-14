@@ -3,10 +3,68 @@
 	height: 100%;
 	min-height: 100vh;
 	overflow: hidden;
+
+	.mainContainer {
+		position: relative;
+
+		height: 100%;
+
+		opacity: 0;
+
+		animation: openMain 500ms 1000ms linear forwards;
+	}
 }
 
-.mainContainer {
-	position: relative;
-	height: 100%;
-	transition: all 0.3s ease-in-out;
+@keyframes openMain {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
+
+.fadeEnter {
+	opacity: 0;
+	z-index: 1;
+}
+
+.fadeEnterActive {
+	opacity: 1;
+	transition: opacity 500ms linear 500ms;
+}
+
+.fadeExit {
+	opacity: 1;
+}
+
+.fadeExitActive {
+	& h1 {
+		animation: head 300ms linear !important;
+	}
+	& div:only-child {
+		animation: main 300ms linear forwards !important;
+	}
+}
+
+@keyframes head {
+	from {
+		top: 0rem;
+		opacity: 1;
+	}
+	to {
+		top: -2rem;
+		opacity: 0;
+	}
+}
+
+@keyframes main {
+	from {
+		top: 6rem;
+		opacity: 1;
+	}
+	to {
+		top: 10rem;
+		opacity: 0;
+	}
+} ;

@@ -4,8 +4,14 @@ import classes from "./UserLink.module.scss";
 
 import AccountIcon from "../../../assets/svg/account-icons/account-name-icon.svg";
 
-const UserLink = ({ username, expanded, openPopup, closePopup }) => {
-	const cls = [classes.UserLink];
+const UserLink = ({
+	username,
+	expanded,
+	openPopup,
+	closePopup,
+	externalStyles,
+}) => {
+	const cls = [classes.UserLink, externalStyles];
 	if (expanded) {
 		cls.push(classes.userLinkExpanded);
 	}

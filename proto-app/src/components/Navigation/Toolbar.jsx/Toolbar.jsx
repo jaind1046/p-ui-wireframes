@@ -1,5 +1,13 @@
 import React, { useState, useContext } from "react";
 
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Redirect,
+	useLocation,
+} from "react-router-dom";
+
 import classes from "./Toolbar.module.scss";
 
 import { AuthContext } from "../../../context/auth/auth-context";
@@ -90,12 +98,17 @@ const Toolbar = ({ expanded, navExpandedHandler }) => {
 		<>
 			<section className={cls.join(" ")}>
 				<GlasswallLogo className={classes.logo} />
-				<NavigationItems expanded={expanded} items={navLinks} />
+				<NavigationItems
+					expanded={expanded}
+					items={navLinks}
+					externalStyles={classes.linkList}
+				/>
 				<UserLink
 					username={"usertest@glasswallsolutions.com"}
 					expanded={expanded}
 					openPopup={() => setIsOpen(true)}
 					closePopup={() => setIsOpen(false)}
+					externalStyles={classes.user}
 				/>
 				<ExpandButton expanded={expanded} clickHandler={navExpandedHandler} />
 			</section>
