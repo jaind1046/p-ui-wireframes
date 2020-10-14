@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { GlobalStoreContext } from "../../../context/globalStore/globalStore-context";
-//import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import classes from "./NavigationItems.module.scss";
 
@@ -16,7 +15,6 @@ const NavigationItems = ({ expanded, items, externalStyles }) => {
 
 	const links = items.map((it) => {
 		return (
-			//<CSSTransition key={it.id} timeout={1000} className={"navItem"}>
 			<NavigationItem
 				key={it.id}
 				path={it.link}
@@ -31,13 +29,11 @@ const NavigationItems = ({ expanded, items, externalStyles }) => {
 					<p>{it.name}</p>
 				</div>
 			</NavigationItem>
-			//</CSSTransition>
 		);
 	});
 
 	return (
 		<nav className={cls.join(" ")}>
-			{/*<TransitionGroup component={`ul`}>{links}</TransitionGroup>*/}
 			<ul>{links}</ul>
 		</nav>
 	);

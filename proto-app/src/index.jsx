@@ -14,19 +14,19 @@ import { PolicyState } from "./context/policy/PolicyState";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
-	<React.StrictMode>
-		<GlobalStoreState>
-			<AuthState>
-				<PolicyState>
-					<FileDropState>
-						<ToastProvider>
-							<App />
-						</ToastProvider>
-					</FileDropState>
-				</PolicyState>
-			</AuthState>
-		</GlobalStoreState>
-	</React.StrictMode>,
+	//<React.StrictMode>
+	<GlobalStoreState>
+		<AuthState>
+			<PolicyState>
+				<FileDropState>
+					<ToastProvider>
+						<App />
+					</ToastProvider>
+				</FileDropState>
+			</PolicyState>
+		</AuthState>
+	</GlobalStoreState>,
+	//</React.StrictMode>,
 	document.getElementById("root")
 );
 

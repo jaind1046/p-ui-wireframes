@@ -1,13 +1,5 @@
 import React, { useState, useContext } from "react";
 
-import {
-	BrowserRouter as Router,
-	Switch,
-	Route,
-	Redirect,
-	useLocation,
-} from "react-router-dom";
-
 import classes from "./Toolbar.module.scss";
 
 import { AuthContext } from "../../../context/auth/auth-context";
@@ -90,7 +82,10 @@ const Toolbar = ({ expanded, navExpandedHandler }) => {
 		{
 			name: "Change password",
 			icon: changePassIcon,
-			onClickButtonHandler: () => openChangePass(),
+			onClickButtonHandler: () => {
+				setIsOpen(false);
+				openChangePass();
+			},
 		},
 	];
 
@@ -120,7 +115,11 @@ const Toolbar = ({ expanded, navExpandedHandler }) => {
 					closePopupHover={() => setIsOpen(false)}
 				/>
 			)}
-			{isChangePass && <ChangePassword closeModal={closeChangePass} />}
+			<ChangePassword
+				isOpenModal={isChangePass}
+				closeModal={closeChangePass}
+				externalStyles={classes.modal}
+			/>
 		</>
 	);
 };
