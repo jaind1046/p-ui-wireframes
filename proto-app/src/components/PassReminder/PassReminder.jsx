@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+
 //import ReCAPTCHA from "react-google-recaptcha";
 
 import { ReactComponent as IconPass } from "../../assets/password-icon.svg";
@@ -23,9 +24,9 @@ const PassReminder = ({ onLoginHandler }) => {
 	//	console.log("ReCAPTCHA is success");
 	//};
 	return (
-		<section>
+		<>
 			<GlasswallLogo className={classes.logo} />
-			<div className={classes.wrapForm}>
+			<section className={classes.PassReminder}>
 				<h2 className={classes.heading}>
 					<IconPass className={classes.iconPass} viewBox={"0 0 44 44"} />
 					Forgotten Password
@@ -60,8 +61,8 @@ const PassReminder = ({ onLoginHandler }) => {
 						<Button buttonType={"submit"}>Send link</Button>
 					</div>
 				</form>
-			</div>
-		</section>
+			</section>
+		</>
 	);
 };
 

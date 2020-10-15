@@ -18,8 +18,7 @@ const Main = ({ title, showTitle, children, expanded }) => {
 		<section className={classes.Main}>
 			{showTitle && <h1 className={classNamesHeading.join(" ")}>{title}</h1>}
 			<div
-				id="main"
-				className={`${classes.mainWrap} ${expanded ? classes.expanded : ""} ${
+				className={`${classes.wrapMain} ${expanded ? classes.expanded : ""} ${
 					showTitle ? classes.showTitle : ""
 				}`}
 			>

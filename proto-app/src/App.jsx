@@ -37,15 +37,37 @@ const App = () => {
 		<div className={classes.app}>
 			<Router>
 				{!isAuth && (
-					<Auth>
-						<Switch>
-							// TODO: Remove from production, for prototype only
-							<Route path="/sow" component={Sow} />
-							<Route path="/pass-reminder" component={PassReminder} />
-							<Route path="/" component={Login} exact />
-							<Redirect to="/" />
-						</Switch>
-					</Auth>
+					<Route
+						render={({ location }) => (
+							<TransitionGroup>
+								<CSSTransition
+									key={location.key}
+									//* время проигрывания анимации
+									timeout={1000}
+									mountOnEnter
+									unmountOnExit
+									classNames={{
+										enter: classes.authEnter,
+										enterActive: classes.authEnterActive,
+										emterDone: classes.authEnterDone,
+										exit: classes.authExit,
+										exitActive: classes.authExitActive,
+										exitDone: classes.authExitDone,
+									}}
+								>
+									<Auth>
+										<Switch location={location}>
+											// TODO: Remove from production, for prototype only
+											<Route path="/sow" component={Sow} />
+											<Route path="/pass-reminder" component={PassReminder} />
+											<Route path="/" component={Login} exact />
+											<Redirect to="/" />
+										</Switch>
+									</Auth>
+								</CSSTransition>
+							</TransitionGroup>
+						)}
+					/>
 				)}
 
 				{isAuth && (
@@ -55,7 +77,7 @@ const App = () => {
 								<TransitionGroup>
 									<CSSTransition
 										key={location.key}
-										timeout={1000}
+										timeout={300}
 										mountOnEnter
 										unmountOnExit
 										classNames={{

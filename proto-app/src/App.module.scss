@@ -10,32 +10,8 @@
 		height: 100%;
 
 		opacity: 0;
-
-		animation: openMain 500ms 1000ms linear forwards;
+		animation: fadein 500ms 1000ms linear forwards;
 	}
-}
-
-@keyframes openMain {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
-}
-
-.fadeEnter {
-	opacity: 0;
-	z-index: 1;
-}
-
-.fadeEnterActive {
-	opacity: 1;
-	transition: opacity 500ms linear 500ms;
-}
-
-.fadeExit {
-	opacity: 1;
 }
 
 .fadeExitActive {
@@ -44,6 +20,30 @@
 	}
 	& div:only-child {
 		animation: main 300ms linear forwards !important;
+	}
+}
+
+.authEnterActive {
+	animation: none !important;
+
+	section {
+		animation: auth 500ms linear alternate-reverse !important;
+	}
+
+	div {
+		animation: logo 500ms linear alternate-reverse !important;
+	}
+}
+
+.authExitActive {
+	animation: fadein 250ms alternate-reverse !important;
+
+	section {
+		animation: auth 500ms linear !important;
+	}
+
+	div {
+		animation: logo 500ms linear !important;
 	}
 }
 
@@ -67,4 +67,35 @@
 		top: 10rem;
 		opacity: 0;
 	}
-} ;
+}
+
+@keyframes auth {
+	from {
+		opacity: 1;
+		top: 50%;
+	}
+	to {
+		top: 100%;
+		opacity: 1;
+	}
+}
+
+@keyframes logo {
+	from {
+		opacity: 1;
+		top: 15%;
+	}
+	to {
+		opacity: 1;
+		top: 80%;
+	}
+}
+
+@keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
