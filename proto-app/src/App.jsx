@@ -42,7 +42,7 @@ const App = () => {
 							<TransitionGroup>
 								<CSSTransition
 									key={location.key}
-									//* время проигрывания анимации
+									// animation time
 									timeout={300}
 									mountOnEnter
 									unmountOnExit
