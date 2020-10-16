@@ -49,6 +49,14 @@
 	}
 }
 
+.openPopupEnterActive {
+	animation: popup 300ms ease-out forwards;
+}
+
+.closePopupExitActive {
+	animation: popup 300ms ease-out alternate-reverse forwards;
+}
+
 @keyframes logo {
 	from {
 		top: 0;
@@ -69,4 +77,15 @@
 		top: 14rem;
 		opacity: 1;
 	}
-} ;
+}
+
+@keyframes popup {
+	from {
+		bottom: 11rem;
+		opacity: 0;
+	}
+	to {
+		bottom: 12rem;
+		opacity: 1;
+	}
+}
