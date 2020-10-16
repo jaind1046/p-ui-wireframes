@@ -57,7 +57,7 @@ const App = () => {
 								>
 									<Auth>
 										<Switch location={location}>
-											// TODO: Remove from production, for prototype only
+											(// TODO: Remove from production, for prototype only)
 											<Route path="/sow" component={Sow} />
 											<Route path="/pass-reminder" component={PassReminder} />
 											<Route path="/" component={Login} exact />

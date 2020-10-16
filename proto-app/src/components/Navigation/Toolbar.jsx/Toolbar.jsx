@@ -111,7 +111,7 @@ const Toolbar = ({ expanded, navExpandedHandler }) => {
 
 			<CSSTransition
 				in={isOpenPopup}
-				timeout={300000}
+				timeout={300}
 				mountOnEnter
 				unmountOnExit
 				classNames={{
