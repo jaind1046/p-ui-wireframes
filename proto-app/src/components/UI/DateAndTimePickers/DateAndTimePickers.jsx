@@ -1,22 +1,31 @@
 import React, { useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { TextField as MuiTextField } from "@material-ui/core";
+import { CSSTransition } from "react-transition-group";
+import { createMuiTheme } from "@material-ui/core";
+import { ThemeProvider } from "@material-ui/styles";
+
+import { KeyboardDateTimePicker } from "@material-ui/pickers";
 
 import classes from "./DateAndTimePickers.module.scss";
 import Popup from "../Popup/Popup";
 
-const useStyles = makeStyles((theme) => ({
-	container: {
-		display: "flex",
-		flexWrap: "nowrap",
-		marginLeft: theme.spacing(1),
-		marginRight: theme.spacing(1),
+const defaultMaterialTheme = createMuiTheme({
+	palette: {
+		primary: { main: "#ffffff" },
 	},
-	textField: {
-		marginLeft: theme.spacing(1),
-		marginRight: theme.spacing(1),
+	overrides: {
+		MuiPickersDay: {
+			daySelected: {
+				backgroundColor: "#4592b0",
+			},
+		},
+
+		MuiPickersClockNumber: {
+			clockNumberSelected: {
+				backgroundColor: "#4592b0",
+			},
+		},
 	},
-}));
+});
 
 const timeIntervalList = [
 	{ name: "1 Hour" },
@@ -28,14 +37,15 @@ const timeIntervalList = [
 
 const DateAndTimePickers = ({ externalStyles }) => {
 	const [isOpen, setIsOpen] = useState(false);
-	const classesTextField = useStyles();
 
 	const date = new Date();
-	const currentDate = date.toISOString().substr(0, 19);
 
 	let earlierDate = new Date();
 	earlierDate.setMonth(date.getMonth() - 1);
 	earlierDate = earlierDate.toISOString().substr(0, 19);
+
+	const [clearedDate, handleClearedDateChange] = useState(null);
+	const [selectedDate, handleDateChange] = useState(new Date());
 
 	return (
 		<div className={[classes.DateAndTimePickers, externalStyles].join(" ")}>
@@ -45,38 +55,47 @@ const DateAndTimePickers = ({ externalStyles }) => {
 			>
 				Date/Time
 			</button>
-			<form className={classesTextField.container} noValidate>
-				<MuiTextField
-					id="datetime-local-left"
-					margin="none"
-					type="datetime-local"
-					defaultValue={earlierDate}
-					className={classes.textField}
-					InputLabelProps={{
-						shrink: true,
-					}}
+
+			<ThemeProvider theme={defaultMaterialTheme}>
+				<KeyboardDateTimePicker
+					value={selectedDate}
+					variant="inline"
+					onChange={handleDateChange}
+					disableFuture
+					format="dd/MM/yyyy hh:mm a"
+					autoOk
 				/>
-			</form>
-			<p>-</p>
-			<form className={classesTextField.container} noValidate>
-				<MuiTextField
-					id="datetime-local-right"
-					margin="none"
-					type="datetime-local"
-					defaultValue={currentDate}
-					className={classes.textField}
-					InputLabelProps={{
-						shrink: true,
-					}}
+				<p>-</p>
+				<KeyboardDateTimePicker
+					value={earlierDate}
+					variant="inline"
+					onChange={handleDateChange}
+					disableFuture
+					format="dd/MM/yyyy hh:mm a"
+					autoOk
 				/>
-			</form>
-			{isOpen && (
+			</ThemeProvider>
+
+			<CSSTransition
+				in={isOpen}
+				timeout={300}
+				mountOnEnter
+				unmountOnExit
+				classNames={{
+					enter: classes.openPopupEnter,
+					enterActive: classes.openPopupEnterActive,
+					emterDone: classes.openPopupEnterDone,
+					exit: classes.closePopupExit,
+					exitActive: classes.closePopupExitActive,
+					exitDone: classes.closePopupExitDone,
+				}}
+			>
 				<Popup
 					links={timeIntervalList}
 					externalStyles={classes.popup}
 					closePopupHover={() => setIsOpen((prevState) => !prevState)}
 				/>
-			)}
+			</CSSTransition>
 		</div>
 	);
 };
