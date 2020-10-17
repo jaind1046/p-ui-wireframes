@@ -58,7 +58,7 @@ const DateAndTimePickers = ({ externalStyles }) => {
 
 			<ThemeProvider theme={defaultMaterialTheme}>
 				<KeyboardDateTimePicker
-					value={selectedDate}
+					value={earlierDate}
 					variant="inline"
 					onChange={handleDateChange}
 					disableFuture
@@ -67,7 +67,7 @@ const DateAndTimePickers = ({ externalStyles }) => {
 				/>
 				<p>-</p>
 				<KeyboardDateTimePicker
-					value={earlierDate}
+					value={selectedDate}
 					variant="inline"
 					onChange={handleDateChange}
 					disableFuture
