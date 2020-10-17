@@ -1,5 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { MuiPickersUtilsProvider } from "@material-ui/pickers";
+import DateFnsUtils from "@date-io/date-fns";
+
 import { ToastProvider } from "react-toast-notifications";
 import App from "./App";
 
@@ -20,13 +23,15 @@ ReactDOM.render(
 			<PolicyState>
 				<FileDropState>
 					<ToastProvider>
-						<App />
+						<MuiPickersUtilsProvider utils={DateFnsUtils}>
+							<App />
+						</MuiPickersUtilsProvider>
 					</ToastProvider>
 				</FileDropState>
 			</PolicyState>
 		</AuthState>
 	</GlobalStoreState>,
-	//</React.StrictMode>,
+	//</React.StrictMode>
 	document.getElementById("root")
 );
 
