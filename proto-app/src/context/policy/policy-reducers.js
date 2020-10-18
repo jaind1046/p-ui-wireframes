@@ -15,7 +15,6 @@ const changeTogglePosition = (state, clickedToggle) => {
 		),
 	});
 
-	console.log(updatedList);
 	return updateObject(state, {
 		policyFlagList: updatedList,
 		isPolicyChanged: true,

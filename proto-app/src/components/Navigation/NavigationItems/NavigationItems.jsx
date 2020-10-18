@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
+import { GlobalStoreContext } from "../../../context/globalStore/globalStore-context";
 
 import classes from "./NavigationItems.module.scss";
 
 import NavigationItem from "./NavigationItem/NavigationItem";
-import { GlobalStoreContext } from "../../../context/globalStore/globalStore-context";
 
-const NavigationItems = ({ expanded, items }) => {
+const NavigationItems = ({ expanded, items, externalStyles }) => {
 	const { changePageTitleHandler } = useContext(GlobalStoreContext);
 
-	const cls = [classes.NavigationItems];
+	const cls = [classes.NavigationItems, externalStyles];
 	if (expanded) {
 		cls.push(classes.menuExpanded);
 	}

@@ -3,7 +3,6 @@ import React from "react";
 import classes from "./Modal.module.scss";
 
 import ButtonClose from "../ButtonClose/ButtonClose";
-import Backdrop from "../Backdrop/Backdrop";
 
 const Modal = ({ onCloseHandler, children, externalStyles }) => {
 	return (
@@ -15,7 +14,6 @@ const Modal = ({ onCloseHandler, children, externalStyles }) => {
 				/>
 				{children}
 			</section>
-			<Backdrop onClickOutside={onCloseHandler} />
 		</>
 	);
 };

@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { CSSTransition } from "react-transition-group";
 
 import classes from "./Toolbar.module.scss";
 
@@ -58,7 +59,7 @@ const navLinks = [
 ];
 
 const Toolbar = ({ expanded, navExpandedHandler }) => {
-	const [isOpen, setIsOpen] = useState(false);
+	const [isOpenPopup, setIsOpenPopup] = useState(false);
 	const {
 		logout,
 		isChangePass,
@@ -82,7 +83,10 @@ const Toolbar = ({ expanded, navExpandedHandler }) => {
 		{
 			name: "Change password",
 			icon: changePassIcon,
-			onClickButtonHandler: () => openChangePass(),
+			onClickButtonHandler: () => {
+				setIsOpenPopup(false);
+				openChangePass();
+			},
 		},
 	];
 
@@ -90,24 +94,48 @@ const Toolbar = ({ expanded, navExpandedHandler }) => {
 		<>
 			<section className={cls.join(" ")}>
 				<GlasswallLogo className={classes.logo} />
-				<NavigationItems expanded={expanded} items={navLinks} />
+				<NavigationItems
+					expanded={expanded}
+					items={navLinks}
+					externalStyles={classes.linkList}
+				/>
 				<UserLink
 					username={"usertest@glasswallsolutions.com"}
 					expanded={expanded}
-					openPopup={() => setIsOpen(true)}
-					closePopup={() => setIsOpen(false)}
+					openPopup={() => setIsOpenPopup(true)}
+					closePopup={() => setIsOpenPopup(false)}
+					externalStyles={classes.user}
 				/>
 				<ExpandButton expanded={expanded} clickHandler={navExpandedHandler} />
 			</section>
-			{isOpen && (
+
+			<CSSTransition
+				in={isOpenPopup}
+				timeout={300}
+				mountOnEnter
+				unmountOnExit
+				classNames={{
+					enter: classes.openPopupEnter,
+					enterActive: classes.openPopupEnterActive,
+					emterDone: classes.openPopupEnterDone,
+					exit: classes.closePopupExit,
+					exitActive: classes.closePopupExitActive,
+					exitDone: classes.closePopupExitDone,
+				}}
+			>
 				<Popup
 					links={accountLinks}
 					externalStyles={classes.popup}
-					openPopupHover={() => setIsOpen(true)}
-					closePopupHover={() => setIsOpen(false)}
+					openPopupHover={() => setIsOpenPopup(true)}
+					closePopupHover={() => setIsOpenPopup(false)}
 				/>
-			)}
-			{isChangePass && <ChangePassword closeModal={closeChangePass} />}
+			</CSSTransition>
+
+			<ChangePassword
+				isOpenModal={isChangePass}
+				closeModal={closeChangePass}
+				externalStyles={classes.modal}
+			/>
 		</>
 	);
 };

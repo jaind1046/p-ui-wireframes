@@ -10,7 +10,12 @@
 	border: 1px solid #b6bfc9;
 	border-radius: 1.5rem;
 
-	& .intervalButton {
+	div {
+		margin-left: 1rem;
+		font-size: 1.3rem;
+	}
+
+	.intervalButton {
 		display: flex;
 		align-items: center;
 
@@ -26,17 +31,46 @@
 
 		cursor: pointer;
 	}
-	& .popup {
+	.popup {
 		top: 3rem;
 		left: 12rem;
-		& button {
+
+		button {
 			margin-bottom: 1rem;
 			transition: all 0.2s ease-in-out;
+
 			&:hover {
 				color: #ffffff;
 				background-color: #4592b0;
 				transition: all 0.2s ease-in-out;
 			}
 		}
+	}
+}
+
+.openPopupEnterActive {
+	animation: popup 300ms ease-out forwards;
+}
+
+.closePopupExitActive {
+	animation: popup 300ms ease-out alternate-reverse forwards;
+}
+
+@keyframes popup {
+	from {
+		top: 6rem;
+		opacity: 0;
+	}
+	to {
+		top: 3rem;
+		opacity: 1;
+	}
+}
+
+.textField {
+	//opacity: 0;
+	input {
+		text-decoration: none;
+		text-decoration: underline;
 	}
 }
