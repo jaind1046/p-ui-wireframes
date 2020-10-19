@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "https://k8-proxy.github.io/p-ui-wireframes/static/css/main.2203bb79.chunk.css",
-    "main.js": "https://k8-proxy.github.io/p-ui-wireframes/static/js/main.60877c0f.chunk.js",
-    "main.js.map": "https://k8-proxy.github.io/p-ui-wireframes/static/js/main.60877c0f.chunk.js.map",
+    "main.css": "https://k8-proxy.github.io/p-ui-wireframes/static/css/main.8ea9efc4.chunk.css",
+    "main.js": "https://k8-proxy.github.io/p-ui-wireframes/static/js/main.0af5a37a.chunk.js",
+    "main.js.map": "https://k8-proxy.github.io/p-ui-wireframes/static/js/main.0af5a37a.chunk.js.map",
     "runtime-main.js": "https://k8-proxy.github.io/p-ui-wireframes/static/js/runtime-main.0a669d12.js",
     "runtime-main.js.map": "https://k8-proxy.github.io/p-ui-wireframes/static/js/runtime-main.0a669d12.js.map",
-    "static/js/2.35142c48.chunk.js": "https://k8-proxy.github.io/p-ui-wireframes/static/js/2.35142c48.chunk.js",
-    "static/js/2.35142c48.chunk.js.map": "https://k8-proxy.github.io/p-ui-wireframes/static/js/2.35142c48.chunk.js.map",
+    "static/js/2.c569bccb.chunk.js": "https://k8-proxy.github.io/p-ui-wireframes/static/js/2.c569bccb.chunk.js",
+    "static/js/2.c569bccb.chunk.js.map": "https://k8-proxy.github.io/p-ui-wireframes/static/js/2.c569bccb.chunk.js.map",
     "index.html": "https://k8-proxy.github.io/p-ui-wireframes/index.html",
-    "precache-manifest.2b0b56386ddf1db0537687a3c9c7b251.js": "https://k8-proxy.github.io/p-ui-wireframes/precache-manifest.2b0b56386ddf1db0537687a3c9c7b251.js",
+    "precache-manifest.3fe7242690777d2fb70ae4f1f2ca8ea4.js": "https://k8-proxy.github.io/p-ui-wireframes/precache-manifest.3fe7242690777d2fb70ae4f1f2ca8ea4.js",
     "service-worker.js": "https://k8-proxy.github.io/p-ui-wireframes/service-worker.js",
-    "static/css/main.2203bb79.chunk.css.map": "https://k8-proxy.github.io/p-ui-wireframes/static/css/main.2203bb79.chunk.css.map",
-    "static/js/2.35142c48.chunk.js.LICENSE.txt": "https://k8-proxy.github.io/p-ui-wireframes/static/js/2.35142c48.chunk.js.LICENSE.txt",
+    "static/css/main.8ea9efc4.chunk.css.map": "https://k8-proxy.github.io/p-ui-wireframes/static/css/main.8ea9efc4.chunk.css.map",
+    "static/js/2.c569bccb.chunk.js.LICENSE.txt": "https://k8-proxy.github.io/p-ui-wireframes/static/js/2.c569bccb.chunk.js.LICENSE.txt",
     "static/media/account-name-icon.svg": "https://k8-proxy.github.io/p-ui-wireframes/static/media/account-name-icon.2452b6d4.svg",
     "static/media/allowed-domains-icon-selected.svg": "https://k8-proxy.github.io/p-ui-wireframes/static/media/allowed-domains-icon-selected.8d2f9403.svg",
     "static/media/allowed-domains-icon.svg": "https://k8-proxy.github.io/p-ui-wireframes/static/media/allowed-domains-icon.de80f2d4.svg",
@@ -39,8 +39,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.0a669d12.js",
-    "static/js/2.35142c48.chunk.js",
-    "static/css/main.2203bb79.chunk.css",
-    "static/js/main.60877c0f.chunk.js"
+    "static/js/2.c569bccb.chunk.js",
+    "static/css/main.8ea9efc4.chunk.css",
+    "static/js/main.0af5a37a.chunk.js"
   ]
 }

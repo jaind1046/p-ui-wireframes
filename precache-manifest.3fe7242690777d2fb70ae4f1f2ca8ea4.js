@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "875e45e6014e35f5651dbd3257aad41a",
+    "revision": "58563fe5774111601a18aee8e6ac9a66",
     "url": "https://k8-proxy.github.io/p-ui-wireframes/index.html"
   },
   {
-    "revision": "4630621d8377de746e30",
-    "url": "https://k8-proxy.github.io/p-ui-wireframes/static/css/main.2203bb79.chunk.css"
+    "revision": "cb6e87317e7b97b83bee",
+    "url": "https://k8-proxy.github.io/p-ui-wireframes/static/css/main.8ea9efc4.chunk.css"
   },
   {
-    "revision": "26481d49d8fee2feee57",
-    "url": "https://k8-proxy.github.io/p-ui-wireframes/static/js/2.35142c48.chunk.js"
+    "revision": "88375e5530eab198aebb",
+    "url": "https://k8-proxy.github.io/p-ui-wireframes/static/js/2.c569bccb.chunk.js"
   },
   {
-    "revision": "c46ade285a7bd9e73d4de71c9509bd70",
-    "url": "https://k8-proxy.github.io/p-ui-wireframes/static/js/2.35142c48.chunk.js.LICENSE.txt"
+    "revision": "6bdf6becedb14e4609964580f4c3faf6",
+    "url": "https://k8-proxy.github.io/p-ui-wireframes/static/js/2.c569bccb.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4630621d8377de746e30",
-    "url": "https://k8-proxy.github.io/p-ui-wireframes/static/js/main.60877c0f.chunk.js"
+    "revision": "cb6e87317e7b97b83bee",
+    "url": "https://k8-proxy.github.io/p-ui-wireframes/static/js/main.0af5a37a.chunk.js"
   },
   {
     "revision": "9294315f35d6d0e99779",
