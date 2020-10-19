@@ -44,7 +44,6 @@ const DateAndTimePickers = ({ externalStyles }) => {
 	earlierDate.setMonth(date.getMonth() - 1);
 	earlierDate = earlierDate.toISOString().substr(0, 19);
 
-	const [clearedDate, handleClearedDateChange] = useState(null);
 	const [selectedDate, handleDateChange] = useState(new Date());
 
 	return (
