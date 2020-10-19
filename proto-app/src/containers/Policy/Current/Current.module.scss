@@ -2,14 +2,15 @@
 	border: 1px solid #b6bfc9;
 	border-radius: 0.6rem;
 	margin: 1rem 2rem 1rem 2rem;
-	& h2 {
+
+	h2 {
 		padding: 0;
 		margin: 0;
 		font-size: 1.4rem;
 		margin: 1rem;
 	}
 
-	& .inner {
+	.inner {
 		margin: 2rem 1rem 3rem 1rem;
 		border: 1px solid #b6bfc9;
 		border-radius: 0.6rem;
@@ -24,13 +25,13 @@
 
 	border-bottom: 1px solid #b6bfc9;
 
-	& p {
+	p {
 		margin: 0;
 		line-height: 4rem;
 		text-transform: uppercase;
 	}
 
-	& button {
+	button {
 		border: 0;
 		outline: none;
 		background: none;

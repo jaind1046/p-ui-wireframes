@@ -23,9 +23,9 @@ const Login = () => {
 		login();
 	};
 	return (
-		<section className={classes.login}>
+		<>
 			<GlasswallLogo className={classes.logo} />
-			<div className={classes.wrapForm}>
+			<section className={classes.login}>
 				<form onSubmit={submitHandler}>
 					<Input
 						type="email"
@@ -63,8 +63,8 @@ const Login = () => {
 				<p className={classes.rePassLink}>
 					<Link to={"/sow"}>SOW Checklist</Link>
 				</p>
-			</div>
-		</section>
+			</section>
+		</>
 	);
 };
 

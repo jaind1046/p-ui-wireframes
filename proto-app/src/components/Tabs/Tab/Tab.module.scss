@@ -3,10 +3,23 @@
 	height: calc(100% - 9rem);
 
 	border-radius: 0.6rem;
+	border: 1px solid #b6bfc9;
+	border-radius: 0.6rem;
 
-	& .innerContent {
+	.innerContent {
 		background: #ffffff;
-		border: 1px solid #b6bfc9;
-		border-radius: 0.6rem;
+
+		opacity: 0;
+
+		animation: changeTab 700ms ease-in-out forwards;
+	}
+}
+
+@keyframes changeTab {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
 	}
 }

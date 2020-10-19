@@ -1,5 +1,6 @@
 import React from "react";
-import styles from "./Main.module.scss";
+
+import classes from "./Main.module.scss";
 
 const Main = ({ title, showTitle, children, expanded }) => {
 	if (showTitle && (title === undefined || title === null)) {
@@ -7,26 +8,23 @@ const Main = ({ title, showTitle, children, expanded }) => {
 			"showTitle is set to true, but no title was supplied to <Main>."
 		);
 	}
-	return (
-		<>
-			{showTitle && (
-				<h1
-					className={`${styles.pageHeading} ${
-						expanded ? styles.expanded : ""
-					}`}
-				>
-					{title}
-				</h1>
-			)}
 
+	const classNamesHeading = [classes.pageHeading];
+	if (expanded) {
+		classNamesHeading.push(classes.expanded);
+	}
+
+	return (
+		<section className={classes.Main}>
+			{showTitle && <h1 className={classNamesHeading.join(" ")}>{title}</h1>}
 			<div
-				className={`${styles.main} ${expanded ? styles.expanded : ""} ${
-					showTitle ? styles.showTitle : ""
+				className={`${classes.wrapMain} ${expanded ? classes.expanded : ""} ${
+					showTitle ? classes.showTitle : ""
 				}`}
 			>
-				<div className={styles.content}>{children}</div>
+				<div className={classes.content}>{children}</div>
 			</div>
-		</>
+		</section>
 	);
 };
 

@@ -1,4 +1,22 @@
 .login {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	height: 100%;
+
+	transform: translate(-50%, -50%);
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	width: 30rem;
+
+	opacity: 0;
+	animation: loginPopup 500ms ease-in-out 100ms forwards;
+
 	& form {
 		display: flex;
 		flex-direction: column;
@@ -8,27 +26,12 @@
 		margin: 4rem 0;
 
 		& input {
-			margin: 2rem 0;
 			padding-left: 5rem;
 		}
+		& button {
+			margin: 4rem auto 0;
+		}
 	}
-	& button {
-		margin: 4rem auto 0;
-	}
-}
-
-.wrapForm {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-
-	width: 30rem;
 }
 
 .logo {
@@ -38,7 +41,11 @@
 	transform: translate(-50%, -50%);
 	width: 20rem;
 	height: 10rem;
-	margin: 3rem 1rem;
+
+	margin: 0 auto;
+
+	opacity: 0;
+	animation: logo 250ms ease-out forwards;
 }
 
 .linkTerms {
@@ -60,3 +67,25 @@
 		text-decoration: none;
 	}
 }
+
+@keyframes loginPopup {
+	from {
+		opacity: 0;
+		top: 60%;
+	}
+	to {
+		top: 50%;
+		opacity: 1;
+	}
+}
+
+@keyframes logo {
+	from {
+		opacity: 0;
+		top: 25%;
+	}
+	to {
+		opacity: 1;
+		top: 15%;
+	}
+} ;

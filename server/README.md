@@ -28,7 +28,7 @@ yarn dev
 ```
   
 This command runs the 'dev' script in the package.json file, which starts a local development server, the server is exposed on port 8080. Navigating to http://localhost:8080 should show the homepage.
-  
+<!--   
 <hr/>    
   
 ### Running the Server Locally (Docker)
@@ -51,9 +51,9 @@ This command runs the Docker container using the Docker image that was just buil
 The <b>-p</b> flag maps the exposed port 8080 to port 4000.  
   The <b>-d</b> flag runs the container in detached mode, which runs in the background.
 
-<hr/>
+<hr/> -->
 
-### Running the Server in Minikube
+<!-- ### Running the Server in Minikube
 #### Make sure you're in the root directory of the project and Docker is running.
 
 #### Prerequisites
@@ -82,4 +82,4 @@ The pod icap-management-portal should be spinning up after the helm install, the
 ```
 minikube service icap-management-portal-service
 ```
-Runs the service, exposing the icap-management-portal container. Minikube should automatically tunnel into the service, and a browser window should pop up with the app running on a random port. If the browser window doesn't open, the IP and port of the running service should be displayed on the command output.
+Runs the service, exposing the icap-management-portal container. Minikube should automatically tunnel into the service, and a browser window should pop up with the app running on a random port. If the browser window doesn't open, the IP and port of the running service should be displayed on the command output. -->
