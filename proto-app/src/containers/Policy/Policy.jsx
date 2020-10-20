@@ -9,14 +9,22 @@ import {
 
 import { PolicyContext } from "../../context/policy/policy-context";
 
+import classes from "./Policy.module.scss";
+
 import prevPolicy from "../../data/prevPolicy.json";
 
 import Current from "./Current/Current";
 import History from "./History/History";
+import DomainField from "../../components/DomainField/DomainField";
+
 import TabNav from "../../components/Tabs/TabNav/TabNav";
 import Tab from "../../components/Tabs/Tab/Tab";
-import classes from "./Policy.module.scss";
 import Button from "../../components/UI/Button/Button";
+
+import AllowedIcon from "../../assets/allowed-domains-icon.svg";
+import AllowedIconSelected from "../../assets/allowed-domains-icon-selected.svg";
+import SystemSettingsSelected from "../../assets/system-settings-icon-selected.svg";
+import SystemSettings from "../../assets/system-settings-icon.svg";
 
 const Policy = () => {
 	const {
@@ -36,8 +44,32 @@ const Policy = () => {
 
 	const [currentPolicy, setCurrentPolicy] = useState(true);
 	const [selectedTab, setSelectedTab] = useState("Current");
+	const [userDomain, setUserDomain] = useState("glasswallsolutions.com");
 
-	const tabs = [{ name: "Current" }, { name: "History" }];
+	const changeInput = (domain) => {
+		setUserDomain(domain);
+	};
+
+	const tabs = [
+		{ name: "Current" },
+		{ name: "History" },
+		{
+			name: "Non Compliant Files",
+			icon: AllowedIcon,
+			iconSelected: AllowedIconSelected,
+		},
+		{
+			name: "System Settings",
+			icon: SystemSettings,
+			iconSelected: SystemSettingsSelected,
+		},
+		{
+			name: "Unprocessable File Types",
+		},
+		{
+			name: "Glasswall Blocked Files",
+		},
+	];
 
 	return (
 		<article className={classes.Policy}>
@@ -93,6 +125,19 @@ const Policy = () => {
 						setPrevPolicy={() => setCurrentPolicy(false)}
 						isCurrent={currentPolicy}
 					/>
+				</Tab>
+				<Tab isSelected={selectedTab === "Non Compliant Files"}>
+					<div className={classes.header}>
+						<p>Routes for non compliant Files</p>
+						<button>+</button>
+					</div>
+					<DomainField
+						name={userDomain}
+						onChangeInputHandler={(evt) => changeInput(evt.target.value)}
+					/>
+				</Tab>
+				<Tab isSelected={selectedTab === "System Settings"}>
+					System Settings
 				</Tab>
 			</TabNav>
 		</article>

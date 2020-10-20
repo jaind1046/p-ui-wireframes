@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import classes from "./HistoryInfo.module.scss";
 
 import CurrentRow from "../../Current/CurrentRow/CurrentRow";
-import DomainField from "../../../Config/DomainField/DomainField";
+import DomainField from "../../../../components/DomainField/DomainField";
 
 const HistoryInfo = ({ prevPolicy }) => {
 	const [userDomain, setUserDomain] = useState("glasswallsolutions.com");

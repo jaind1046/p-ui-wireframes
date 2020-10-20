@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import DomainField from "../../Config/DomainField/DomainField";
+import DomainField from "../../../components/DomainField/DomainField";
 
 import classes from "./Current.module.scss";
 

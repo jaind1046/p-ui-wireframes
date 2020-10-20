@@ -20,7 +20,6 @@ import Toolbar from "./components/Navigation/Toolbar.jsx/Toolbar";
 import Login from "./components/Login/Login";
 import PassReminder from "./components/PassReminder/PassReminder";
 import Users from "./containers/Users/Users";
-import Config from "./containers/Config/Config";
 import RequestHistory from "./containers/RequestHistory/RequestHistory";
 import Policy from "./containers/Policy/Policy";
 import Dashboard from "./containers/Dashboard/Dashboard";
@@ -103,7 +102,6 @@ const App = () => {
 												<Route path="/file-drop" component={FileDrop} />
 												<Route path="/policy" component={Policy} />
 
-												<Route path="/configuration" component={Config} />
 												<Route path="/users" component={Users} />
 												<Route path="/">
 													<div>Home</div>

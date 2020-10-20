@@ -3,21 +3,27 @@
 
 	background: #edf0f1;
 
-	& .header {
+	.header {
 		display: flex;
 		justify-content: space-between;
+		width: 100%;
+		padding: 0 2rem;
+		border-bottom: 1px solid #b6bfc9;
 
-		background: #edf0f1;
-
-		border-top-left-radius: 0.6rem;
-
-		& .table {
+		button {
+			border: 0;
+			outline: none;
+			background: none;
+			font-size: 3rem;
+			color: #498fa7;
+		}
+		.table {
 			margin-top: 2rem;
 
 			margin-bottom: 1rem;
 			margin-left: 3rem;
 
-			& th {
+			th {
 				padding: 0.4rem;
 				padding-right: 5rem;
 				padding-left: 2rem;
@@ -27,23 +33,24 @@
 				font-size: 1.2rem;
 			}
 
-			& thead {
+			thead {
 				background: #ffffff;
 				border-bottom: 1px solid #000;
 			}
 
-			& tbody {
+			tbody {
 				background: #edf0f1;
 				padding: 1rem;
 
-				& th {
+				th {
 					padding-top: 1rem;
 					background: #e6e9ea;
 				}
 			}
 		}
 	}
-	& .buttons {
+
+	.buttons {
 		display: flex;
 		justify-content: flex-end;
 
