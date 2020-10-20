@@ -50,7 +50,7 @@ const App = () => {
 									classNames={{
 										enter: classes.authEnter,
 										enterActive: classes.authEnterActive,
-										emterDone: classes.authEnterDone,
+										enterDone: classes.authEnterDone,
 										exit: classes.authExit,
 										exitActive: classes.authExitActive,
 										exitDone: classes.authExitDone,
@@ -78,13 +78,13 @@ const App = () => {
 								<TransitionGroup>
 									<CSSTransition
 										key={location.key}
-										timeout={300}
+										timeout={800}
 										mountOnEnter
 										unmountOnExit
 										classNames={{
 											enter: classes.fadeEnter,
 											enterActive: classes.fadeEnterActive,
-											emterDone: classes.fadeEnterDone,
+											enterDone: classes.fadeEnterDone,
 											exit: classes.fadeExit,
 											exitActive: classes.fadeExitActive,
 											exitDone: classes.fadeExitDone,
@@ -105,7 +105,10 @@ const App = () => {
 
 												<Route path="/configuration" component={Config} />
 												<Route path="/users" component={Users} />
-												{/*<Redirect to="/" />*/}
+												<Route path="/">
+													<div>Home</div>
+												</Route>
+												<Redirect to="/" />
 											</Switch>
 										</Main>
 									</CSSTransition>

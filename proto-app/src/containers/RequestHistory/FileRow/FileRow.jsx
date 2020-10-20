@@ -8,7 +8,7 @@ const FileRow = ({
 	fileId,
 	name,
 	type,
-	outcome,
+	risk,
 	onRowClickHandler,
 }) => {
 	return (
@@ -16,7 +16,7 @@ const FileRow = ({
 			<TableCell id={id}>{timestamp}</TableCell>
 			<TableCell id={id}>{fileId}</TableCell>
 			<TableCell id={id}>{type}</TableCell>
-			<TableCell id={id}>{outcome}</TableCell>
+			<TableCell id={id}>{risk}</TableCell>
 		</TableRow>
 	);
 };

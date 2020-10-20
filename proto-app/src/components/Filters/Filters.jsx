@@ -25,7 +25,7 @@ const Filters = ({ popupIsOpen, changeVisibilityPopup }) => {
 	const {
 		addFilterInput,
 		fileFilter,
-		outcomeFilter,
+		riskFilter,
 		selectedFilters,
 		removeFilter,
 	} = useContext(GlobalStoreContext);
@@ -49,10 +49,10 @@ const Filters = ({ popupIsOpen, changeVisibilityPopup }) => {
 			},
 		},
 		{
-			name: "Outcomes",
+			name: "Risk",
 			onClickButtonHandler: () => {
 				setOpenFileId(false);
-				setOpenFilter("Outcomes");
+				setOpenFilter("Risk");
 			},
 		},
 		{
@@ -104,9 +104,9 @@ const Filters = ({ popupIsOpen, changeVisibilityPopup }) => {
 			filterStyle = classes.popupFilterFileType;
 			break;
 
-		case "Outcomes":
-			filter = outcomeFilter;
-			filterStyle = classes.popupFilterOutcome;
+		case "Risk":
+			filter = riskFilter;
+			filterStyle = classes.popupFilterRisk;
 			break;
 		default:
 			filter = null;

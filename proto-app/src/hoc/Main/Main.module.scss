@@ -1,4 +1,6 @@
 .Main {
+	overflow: hidden;
+
 	.wrapMain {
 		position: absolute;
 		display: block;
@@ -7,10 +9,6 @@
 		width: calc(100% - 7rem);
 		height: 100%;
 		padding: 2rem;
-		transition: all 300ms ease-in-out;
-
-		opacity: 0;
-		animation: main 300ms 300ms linear forwards;
 
 		&.expanded {
 			width: calc(100% - 24rem);
@@ -25,6 +23,7 @@
 
 	.pageHeading {
 		position: absolute;
+
 		left: 7rem;
 		display: block;
 
@@ -43,10 +42,10 @@
 		color: #4592b0;
 		border-bottom: #fff 1px solid;
 
-		transition: all 300ms ease-in-out;
+		//transition: all 300ms ease-in-out;
 
-		opacity: 0;
-		animation: head 300ms 300ms linear forwards;
+		//opacity: 0;
+		//animation: head 300ms 300ms linear forwards;
 
 		&.expanded {
 			left: 24rem;
@@ -54,8 +53,6 @@
 	}
 
 	.content {
-		overflow: hidden;
-
 		position: relative;
 		height: 100%;
 		padding: 0;
@@ -65,24 +62,13 @@
 	}
 }
 
-@keyframes head {
-	from {
-		top: -2rem;
-		opacity: 0;
-	}
-	to {
-		top: 0rem;
-		opacity: 1;
-	}
-}
-
-@keyframes main {
-	from {
-		top: 8rem;
-		opacity: 0;
-	}
-	to {
-		top: 6rem;
-		opacity: 1;
-	}
-} ;
+//@keyframes head {
+//	from {
+//		top: -2rem;
+//		opacity: 0;
+//	}
+//	to {
+//		top: 0rem;
+//		opacity: 1;
+//	}
+//}

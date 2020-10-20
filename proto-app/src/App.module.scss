@@ -14,12 +14,23 @@
 	}
 }
 
-.fadeExitActive {
-	& h1 {
-		animation: head 300ms linear !important;
+.fadeEnter.fadeEnterActive {
+	h1[id="heading"] {
+		animation: headEn 800ms linear;
 	}
-	& div:only-child {
-		animation: main 300ms linear forwards !important;
+
+	div[id="wrapMain"] {
+		animation: mainEn 800ms linear;
+	}
+}
+
+.fadeExit.fadeExitActive {
+	h1[id="heading"] {
+		animation: headEn alternate-reverse 800ms linear;
+	}
+
+	div[id="wrapMain"] {
+		animation: mainEn alternate-reverse 800ms linear;
 	}
 }
 
@@ -47,25 +58,33 @@
 	}
 }
 
-@keyframes head {
-	from {
-		top: 0rem;
-		opacity: 1;
-	}
-	to {
-		top: -2rem;
+@keyframes headEn {
+	0% {
 		opacity: 0;
+		top: -7rem;
+	}
+
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+		top: 0rem;
 	}
 }
 
-@keyframes main {
-	from {
-		top: 6rem;
-		opacity: 1;
-	}
-	to {
+@keyframes mainEn {
+	0% {
 		top: 10rem;
 		opacity: 0;
+	}
+
+	50% {
+		opacity: 0;
+	}
+	100% {
+		top: 6rem;
+		opacity: 1;
 	}
 }
 

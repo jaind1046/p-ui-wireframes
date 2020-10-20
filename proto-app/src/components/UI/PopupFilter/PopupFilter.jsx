@@ -10,8 +10,8 @@ const PopupFilter = ({
 }) => {
 	const addedFilter = filter.map(({ id, filterName, checkboxList }) => {
 		let filterStyle = classes.fileType;
-		if (filterName === "Outcome") {
-			filterStyle = classes.outcome;
+		if (filterName === "Risk") {
+			filterStyle = classes.risk;
 		}
 		return (
 			<Filter

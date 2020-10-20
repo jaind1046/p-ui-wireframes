@@ -4,6 +4,6 @@ export const GlobalStoreContext = createContext({
 	title: "",
 	fileFilterList: [],
 	userfiles: [],
-	outcomeFilterList: [],
+	riskFilterList: [],
 	selectedFilters: [],
 });
