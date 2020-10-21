@@ -7,19 +7,22 @@ const Popup = ({
 	closePopupHover,
 	externalStyles,
 }) => {
-	const buttonList = links.map(({ name, icon, onHoverButtonHandler }) => {
-		return (
-			<button
-				key={name}
-				onMouseEnter={onHoverButtonHandler}
-				style={{
-					backgroundImage: `url(${icon})`,
-				}}
-			>
-				<p>{name}</p>
-			</button>
-		);
-	});
+	const buttonList = links.map(
+		({ name, icon, onHoverButtonHandler, onClickButtonHandler }) => {
+			return (
+				<button
+					key={name}
+					onMouseEnter={onHoverButtonHandler}
+					onClick={onClickButtonHandler}
+					style={{
+						backgroundImage: `url(${icon})`,
+					}}
+				>
+					<p>{name}</p>
+				</button>
+			);
+		}
+	);
 	return (
 		<div
 			className={[classes.wrap, externalStyles].join(" ")}

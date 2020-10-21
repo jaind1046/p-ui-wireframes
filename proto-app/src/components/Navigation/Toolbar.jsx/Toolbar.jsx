@@ -77,6 +77,7 @@ const Toolbar = ({ expanded, navExpandedHandler }) => {
 			name: "Change password",
 			icon: changePassIcon,
 			onClickButtonHandler: () => {
+				console.log("Change password");
 				setIsOpenPopup(false);
 				openChangePass();
 			},
