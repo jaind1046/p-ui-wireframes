@@ -50,10 +50,6 @@ const Users = () => {
 				onSetActiveTabHandler={(tab) => setSelectedTab(tab)}
 			>
 				<Tab isSelected={selectedTab === "Users"}>
-					<div className={classes.header}>
-						<p>Users</p>
-						<button>+</button>
-					</div>
 					<Table className={classes.table}>
 						<TableHead>
 							<TableRow>
