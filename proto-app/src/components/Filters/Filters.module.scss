@@ -1,5 +1,6 @@
 .Filters {
 	background: #e6e9ea;
+	margin-bottom: 1rem;
 
 	cursor: pointer;
 
@@ -36,6 +37,8 @@
 
 		& .head {
 			display: block;
+
+			margin: 0;
 		}
 
 		& .arrow::before {
@@ -82,9 +85,9 @@
 		}
 	}
 
-	& .footer {
+	.footer {
 		position: relative;
-		& .filters {
+		.filters {
 			height: 0;
 			background-color: #e9ecec;
 
@@ -100,18 +103,18 @@
 		}
 	}
 
-	& .filterList {
+	.filterList {
 		display: flex;
 		flex-direction: column;
 		margin: 1rem 0;
-		& li {
+		li {
 			width: 15rem;
 			height: 3rem;
 			&:hover {
 				background-color: #e6e9ea;
 				transition: all 0.1s;
 			}
-			& button {
+			button {
 				border: none;
 				background: none;
 				cursor: pointer;
@@ -124,36 +127,35 @@
 		}
 	}
 
-	& .popup {
-		top: 19.2rem;
+	.popup {
+		top: 17.2rem;
 		left: 2rem;
 
-		& button {
+		button {
 			text-transform: none;
 		}
 	}
 
-	& .popupFilterFileType {
+	.popupFilterFileType {
+		outline: 5rem solid transparent;
 		top: 19.2rem;
-		left: 14rem;
+		left: 17.5rem;
 		z-index: 98;
-
-		//width: 60rem;
 
 		padding: 2rem;
 
-		& fieldset {
+		fieldset {
 			margin-bottom: 5rem;
 
-			& label {
+			label {
 				margin-left: 0.5rem;
 			}
 		}
 	}
 
-	& .popupFilterRisk {
+	.popupFilterRisk {
 		top: 19.2rem;
-		left: 14rem;
+		left: 17.5rem;
 		z-index: 98;
 
 		white-space: nowrap;
@@ -167,10 +169,10 @@
 		}
 	}
 
-	& .fileId {
+	.fileId {
 		position: absolute;
 		top: 29rem;
-		left: 14rem;
+		left: 17.5rem;
 		z-index: 98;
 
 		display: flex;
@@ -183,25 +185,23 @@
 		box-shadow: 0 3px 16px 1.6px rgba(0, 0, 0, 0.34);
 		transition: 0.3s opacity, 0.3s transform;
 
-		& .inputFileId {
+		.inputFileId {
 			border: 1px solid #b6bfc9;
 			border-radius: 0.3rem;
 
 			padding: 0;
 			margin: 0;
 
-			padding-left: 2rem;
 			color: black;
 
-			& input {
+			input {
 				color: #000000;
-			}
 
-			&::placeholder {
-				color: #b6bfc9;
-				opacity: 1;
-
-				text-transform: initial;
+				&::placeholder {
+					color: #b6bfc9;
+					opacity: 1;
+					text-transform: initial;
+				}
 			}
 		}
 		& .addButton {

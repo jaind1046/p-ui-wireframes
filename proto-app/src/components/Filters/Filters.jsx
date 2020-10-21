@@ -43,21 +43,21 @@ const Filters = ({ popupIsOpen, changeVisibilityPopup }) => {
 	const filterList = [
 		{
 			name: "File Types",
-			onClickButtonHandler: () => {
+			onHoverButtonHandler: () => {
 				setOpenFileId(false);
 				setOpenFilter("File Types");
 			},
 		},
 		{
 			name: "Risk",
-			onClickButtonHandler: () => {
+			onHoverButtonHandler: () => {
 				setOpenFileId(false);
 				setOpenFilter("Risk");
 			},
 		},
 		{
 			name: "File ID",
-			onClickButtonHandler: () => {
+			onHoverButtonHandler: () => {
 				setOpenFilter(null);
 				setOpenFileId((prevState) => !prevState);
 			},
