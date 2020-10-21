@@ -149,19 +149,37 @@ const FileDrop = () => {
 		<section className={classes.FileDrop}>
 			<div className={classes.dropzoneWrap}>
 				{!fileProcessed ? (
-					<StyledDropzone
-						externalStyles={classes.dropzone}
-						onDrop={handleDrop}
-						accept={accept}
-						loading={loading}
+					<section
+						style={{
+							display: "flex",
+							background: "white",
+							margin: 0,
+							justifyContent: "center",
+							alignItems: "center",
+							height: "100%",
+						}}
 					>
-						<div className={classes.message}>Drop a file here</div>
-						<div className={[classes.message, classes.reject].join(" ")}>
-							Please use a supported file type
+						<StyledDropzone
+							//externalStyles={classes.dropzone}
+							onDrop={handleDrop}
+							accept={accept}
+							loading={loading}
+						>
+							<div className={classes.message}>Drop a file here</div>
+							<div className={[classes.message, classes.reject].join(" ")}>
+								Please use a supported file type
+							</div>
+							<div className={[classes.image, classes.imageDrop].join(" ")} />
+							<Button externalStyles={classes.button}>SELECT A FILE</Button>
+						</StyledDropzone>
+						<div className={classes.infoBlock}>
+							<p>
+								Once the file has been uploaded, it is passed through the
+								Analysis API of the Glasswall SDK. The applied content
+								management policy has all content flags set to 'Sanitise'.
+							</p>
 						</div>
-						<div className={[classes.image, classes.imageDrop].join(" ")} />
-						<Button externalStyles={classes.button}>SELECT A FILE</Button>
-					</StyledDropzone>
+					</section>
 				) : (
 					<>
 						<div className={[classes.dropzone, classes.processed].join(" ")}>

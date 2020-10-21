@@ -133,7 +133,7 @@ const Filters = ({ popupIsOpen, changeVisibilityPopup }) => {
 		<section className={classes.Filters}>
 			<div className={classes.wrap}>
 				<div className={classes.header}>
-					<h2 className={classes.head}>Filters</h2>
+					<h3 className={classes.head}>Filters</h3>
 
 					<button
 						className={clsMoreFilters.join(" ")}

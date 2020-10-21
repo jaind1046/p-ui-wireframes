@@ -19,7 +19,7 @@ const DomainField = ({ name, onChangeInputHandler, disabled }) => {
 		<Table className={classes.table}>
 			<TableHead>
 				<TableRow>
-					<TableCell>Domain Name</TableCell>
+					<TableCell>API URL</TableCell>
 					<TableCell>Validated</TableCell>
 				</TableRow>
 			</TableHead>
