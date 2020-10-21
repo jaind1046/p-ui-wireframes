@@ -43,7 +43,7 @@ const App = () => {
 								<CSSTransition
 									key={location.key}
 									//* время проигрывания анимации
-									timeout={300}
+									timeout={500}
 									mountOnEnter
 									unmountOnExit
 									classNames={{
@@ -81,12 +81,8 @@ const App = () => {
 										mountOnEnter
 										unmountOnExit
 										classNames={{
-											enter: classes.fadeEnter,
 											enterActive: classes.fadeEnterActive,
-											enterDone: classes.fadeEnterDone,
-											exit: classes.fadeExit,
 											exitActive: classes.fadeExitActive,
-											exitDone: classes.fadeExitDone,
 										}}
 									>
 										<Main showTitle title={title} expanded={navExpanded}>
