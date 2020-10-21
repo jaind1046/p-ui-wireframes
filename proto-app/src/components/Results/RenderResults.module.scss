@@ -1,12 +1,18 @@
 .RenderResults {
-	width: 48%;
+	position: relative;
+	top: 0;
+	left: 0;
+
 	background: #ffffff;
 	border: 1px solid #b6bfc9;
 	border-radius: 0.6rem;
 
 	overflow: hidden;
+	opacity: 0;
 
-	& .headline {
+	animation: fade-in 500ms linear forwards;
+
+	.headline {
 		font-size: 1.5rem;
 		line-height: 4rem;
 		text-transform: uppercase;
@@ -19,19 +25,19 @@
 		border-bottom: 1px solid #636363;
 	}
 
-	& .container {
+	.container {
 		height: 100%;
 		padding: 0 5%;
 
 		overflow-y: auto;
 		padding-bottom: 4rem;
 
-		& .buttons {
+		.buttons {
 			display: flex;
 			margin: 1rem;
 		}
 
-		& .button {
+		.button {
 			font-size: 1.7rem;
 			font-weight: 800;
 
@@ -45,6 +51,7 @@
 		}
 	}
 }
+
 .result {
 	display: flex;
 	flex-direction: column;
@@ -52,4 +59,15 @@
 	align-items: center;
 
 	padding: 0 10%;
+}
+
+@keyframes fade-in {
+	from {
+		top: 5rem;
+		opacity: 0;
+	}
+	to {
+		top: 0;
+		opacity: 1;
+	}
 }
