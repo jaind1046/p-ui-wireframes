@@ -19,7 +19,7 @@ const PolicyForNonCompliantFiles = () => {
 				</div>
 				<div>
 					<h3>
-						<strong>Glasswall Blocked Files</strong>Glasswall Blocked Files
+						<strong>Glasswall Blocked Files</strong>
 					</h3>
 					<p>The original file cannot be rebuilt by the Glasswall SDK</p>
 				</div>
