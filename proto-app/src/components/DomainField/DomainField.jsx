@@ -40,20 +40,6 @@ const DomainField = ({ name, onChangeInputHandler, disabled }) => {
 				</TableRow>
 			</TableBody>
 		</Table>
-		//<div className={classes.DomainField}>
-		//	<div className={classes.td}>
-		//		<Input
-		//			type="text"
-		//			value={name}
-		//			onChange={onChangeInputHandler}
-		//			disabled={disabled}
-		//		/>
-		//		<div className={classes.validated}>
-		//			<TickIcon stroke="#73AE6F" />
-		//			<DeleteIcon stroke="#D69598" />
-		//		</div>
-		//	</div>
-		//</div>
 	);
 };
 

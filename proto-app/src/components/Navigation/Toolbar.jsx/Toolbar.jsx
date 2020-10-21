@@ -7,7 +7,7 @@ import { AuthContext } from "../../../context/auth/auth-context";
 
 import GlasswallLogo from "../../GlasswallLogo/GlasswallLogo";
 import NavigationItems from "../NavigationItems/NavigationItems";
-import { ExpandButton } from "../../GlasswallNav/GlasswallNav";
+import { ExpandButton } from "../ExpandButton/ExpandButton";
 import UserLink from "../../UI/UserLink/UserLink";
 import Popup from "../../UI/Popup/Popup";
 

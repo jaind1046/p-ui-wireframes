@@ -9,8 +9,12 @@
 		align-items: center;
 
 		.input {
+			display: flex;
+			align-items: center;
 			width: 100%;
 			border-bottom: 1px solid #b6bfc9;
+
+			height: 5rem;
 
 			&:first-child {
 				border-top: 1px solid #54e0e8;
@@ -29,13 +33,11 @@
 			padding-left: 2rem;
 			margin: 1rem 0;
 
-			line-height: 5rem;
-
 			cursor: pointer;
 
 			&::before {
 				position: absolute;
-				top: 3px;
+				top: 1px;
 				left: 0;
 				z-index: 1;
 				content: "";
@@ -50,7 +52,7 @@
 
 			&::after {
 				position: absolute;
-				top: 5px;
+				top: 3px;
 				left: 2px;
 				z-index: 2;
 				content: "";
