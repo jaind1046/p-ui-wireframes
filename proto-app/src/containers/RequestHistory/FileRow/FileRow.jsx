@@ -8,23 +8,15 @@ const FileRow = ({
 	fileId,
 	name,
 	type,
-	outcome,
+	risk,
 	onRowClickHandler,
 }) => {
 	return (
 		<TableRow className={classes.FileRow} id={id} onClick={onRowClickHandler}>
-			<TableCell component="th" scope="row" id={id}>
-				{timestamp}
-			</TableCell>
-			<TableCell component="th" scope="row" id={id}>
-				{fileId}
-			</TableCell>
-			<TableCell component="th" scope="row" id={id}>
-				{type}
-			</TableCell>
-			<TableCell component="th" scope="row" id={id}>
-				{outcome}
-			</TableCell>
+			<TableCell id={id}>{timestamp}</TableCell>
+			<TableCell id={id}>{fileId}</TableCell>
+			<TableCell id={id}>{type}</TableCell>
+			<TableCell id={id}>{risk}</TableCell>
 		</TableRow>
 	);
 };

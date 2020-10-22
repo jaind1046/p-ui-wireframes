@@ -7,7 +7,7 @@ import { AuthContext } from "../../../context/auth/auth-context";
 
 import GlasswallLogo from "../../GlasswallLogo/GlasswallLogo";
 import NavigationItems from "../NavigationItems/NavigationItems";
-import { ExpandButton } from "../../GlasswallNav/GlasswallNav";
+import { ExpandButton } from "../ExpandButton/ExpandButton";
 import UserLink from "../../UI/UserLink/UserLink";
 import Popup from "../../UI/Popup/Popup";
 
@@ -15,7 +15,6 @@ import usersIcon from "../../../assets/menu-icons/icon-users.svg";
 import releaseIcon from "../../../assets/menu-icons/icon-release.svg";
 import policy from "../../../assets/menu-icons/icon-policies.svg";
 import transactionIcon from "../../../assets/menu-icons/icon-transactions.svg";
-import configIcon from "../../../assets/menu-icons/icon-config.svg";
 import dashIcon from "../../../assets/menu-icons/icon-dashboard.svg";
 
 import logoutIcon from "../../../assets/svg/account-icons/logout-icon.svg";
@@ -38,24 +37,18 @@ const navLinks = [
 		exact: true,
 	},
 	{
-		link: "/file-drop",
-		name: "File drop",
-		icon: releaseIcon,
-		id: "id-3",
-	},
-	{
 		link: "/policy",
 		name: "Policy",
 		icon: policy,
-		id: "id-4",
+		id: "id-3",
 	},
+	{ link: "/users", name: "Users", icon: usersIcon, id: "id-4" },
 	{
-		link: "/configuration",
-		name: "Configuration",
-		icon: configIcon,
+		link: "/file-drop",
+		name: "File drop",
+		icon: releaseIcon,
 		id: "id-5",
 	},
-	{ link: "/users", name: "Users", icon: usersIcon, id: "id-6" },
 ];
 
 const Toolbar = ({ expanded, navExpandedHandler }) => {
@@ -84,6 +77,7 @@ const Toolbar = ({ expanded, navExpandedHandler }) => {
 			name: "Change password",
 			icon: changePassIcon,
 			onClickButtonHandler: () => {
+				console.log("Change password");
 				setIsOpenPopup(false);
 				openChangePass();
 			},

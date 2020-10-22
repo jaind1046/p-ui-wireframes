@@ -20,7 +20,6 @@ import Toolbar from "./components/Navigation/Toolbar.jsx/Toolbar";
 import Login from "./components/Login/Login";
 import PassReminder from "./components/PassReminder/PassReminder";
 import Users from "./containers/Users/Users";
-import Config from "./containers/Config/Config";
 import RequestHistory from "./containers/RequestHistory/RequestHistory";
 import Policy from "./containers/Policy/Policy";
 import Dashboard from "./containers/Dashboard/Dashboard";
@@ -44,13 +43,13 @@ const App = () => {
 								<CSSTransition
 									key={location.key}
 									// animation time
-									timeout={300}
+									timeout={500}
 									mountOnEnter
 									unmountOnExit
 									classNames={{
 										enter: classes.authEnter,
 										enterActive: classes.authEnterActive,
-										emterDone: classes.authEnterDone,
+										enterDone: classes.authEnterDone,
 										exit: classes.authExit,
 										exitActive: classes.authExitActive,
 										exitDone: classes.authExitDone,
@@ -78,16 +77,12 @@ const App = () => {
 								<TransitionGroup>
 									<CSSTransition
 										key={location.key}
-										timeout={300}
+										timeout={800}
 										mountOnEnter
 										unmountOnExit
 										classNames={{
-											enter: classes.fadeEnter,
 											enterActive: classes.fadeEnterActive,
-											emterDone: classes.fadeEnterDone,
-											exit: classes.fadeExit,
 											exitActive: classes.fadeExitActive,
-											exitDone: classes.fadeExitDone,
 										}}
 									>
 										<Main showTitle title={title} expanded={navExpanded}>
@@ -103,9 +98,11 @@ const App = () => {
 												<Route path="/file-drop" component={FileDrop} />
 												<Route path="/policy" component={Policy} />
 
-												<Route path="/configuration" component={Config} />
 												<Route path="/users" component={Users} />
-												{/*<Redirect to="/" />*/}
+												<Route path="/">
+													<div>Home</div>
+												</Route>
+												<Redirect to="/" />
 											</Switch>
 										</Main>
 									</CSSTransition>

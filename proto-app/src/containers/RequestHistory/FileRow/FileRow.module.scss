@@ -12,8 +12,14 @@
 		transition: background 0.2s ease-in-out;
 		background: #e6e9ea;
 	}
-}
 
-.FileRow:last-child {
-	border: none;
+	&:last-child {
+		border-bottom: 1px solid #54e0e8;
+	}
+
+	td {
+		font-size: 1.2rem;
+		border-bottom: none;
+		padding: 0;
+	}
 }

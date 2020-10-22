@@ -15,7 +15,7 @@ const Checkbox = ({
 }) => {
 	let checkbox = null;
 
-	if (filter === "Outcome") {
+	if (filter === "Risk") {
 		checkbox = (
 			<MuiCheckbox
 				disableRipple
@@ -41,12 +41,12 @@ const Checkbox = ({
 		<FormControlLabel
 			style={{ background: backgroundColor }}
 			className={
-				filter !== "Outcome"
+				filter !== "Risk"
 					? classes.Checkbox
-					: [classes.Checkbox, classes.outcome].join(" ")
+					: [classes.Checkbox, classes.risk].join(" ")
 			}
 			label={label}
-			labelPlacement={filter !== "Outcome" ? "start" : "end"}
+			labelPlacement={filter !== "Risk" ? "start" : "end"}
 			control={checkbox}
 		/>
 	);

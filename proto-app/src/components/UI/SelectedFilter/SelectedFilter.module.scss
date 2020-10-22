@@ -9,6 +9,7 @@
 	& .header {
 		position: relative;
 		display: flex;
+		justify-content: center;
 
 		width: 100%;
 
@@ -43,7 +44,7 @@
 	}
 }
 
-.outcome {
+.risk {
 	color: #fff;
 	text-transform: uppercase;
 	& span {

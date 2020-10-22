@@ -1,74 +1,124 @@
 import React, { useState } from "react";
-import DomainField from "../../Config/DomainField/DomainField";
+import Button from "../../../components/UI/Button/Button";
+
+import {
+	Table,
+	TableHead,
+	TableRow,
+	TableCell,
+	TableBody,
+} from "@material-ui/core";
 
 import classes from "./Current.module.scss";
 
 import CurrentRow from "./CurrentRow/CurrentRow";
+import RoutesForNonCompliantFiles from "../RoutesForNonCompliantFiles/RoutesForNonCompliantFiles";
+import PolicyForNonCompliantFiles from "../PolicyForNonCompliantFiles/PolicyForNonCompliantFiles";
 
-const Current = ({ policyFlags, changeToggle }) => {
+const Current = ({
+	timestamp,
+	id,
+	email,
+	policyFlags,
+	changeToggle,
+	currentPolicy,
+	policy,
+	isPolicyChanged,
+	cancelChanges,
+	saveChanges,
+}) => {
 	const [userDomain, setUserDomain] = useState("glasswallsolutions.com");
 	return (
-		<>
-			<div className={classes.Current}>
-				<header className={classes.header}>
-					<p>Content Flags</p>
-				</header>
-				<div className={classes.inner}>
-					<section>
+		<div className={classes.Current}>
+			<div className={classes.header}>
+				<div className={classes.table}>
+					<Table>
+						<TableHead>
+							<TableRow>
+								<TableCell>Timestamp</TableCell>
+								<TableCell>Updated By</TableCell>
+							</TableRow>
+						</TableHead>
+						<TableBody className={classes.tbody}>
+							<TableRow>
+								<TableCell
+									component="th"
+									scope="row"
+									id={currentPolicy ? id : policy.id}
+								>
+									{currentPolicy ? timestamp : policy.timestamp}
+								</TableCell>
+								<TableCell
+									component="th"
+									scope="row"
+									id={currentPolicy ? id : policy.id}
+								>
+									{currentPolicy ? email : policy.userEmail}
+								</TableCell>
+							</TableRow>
+						</TableBody>
+					</Table>
+				</div>
+				{isPolicyChanged && (
+					<div className={classes.buttons}>
+						<Button
+							externalStyles={classes.buttons}
+							onButtonClick={cancelChanges}
+						>
+							Cancel Changes
+						</Button>
+						<Button
+							externalStyles={classes.buttons}
+							onButtonClick={saveChanges}
+						>
+							Save Changes
+						</Button>
+					</div>
+				)}
+			</div>
+			<div className={classes.innerContent}>
+				<h2>Content Flags</h2>
+				<div className={classes.toggleBlock}>
+					<div>
 						<h2>Word</h2>
 						<CurrentRow
 							block="word"
 							itemList={policyFlags.word}
 							onChangeHandler={changeToggle}
 						/>
-					</section>
-					<section>
+					</div>
+					<div>
 						<h2>Excel</h2>
 						<CurrentRow
 							block="excel"
 							itemList={policyFlags.excel}
 							onChangeHandler={changeToggle}
 						/>
-					</section>
-					<section>
+					</div>
+					<div>
 						<h2>Powerpoint</h2>
 						<CurrentRow
 							block="powerpoint"
 							itemList={policyFlags.powerpoint}
 							onChangeHandler={changeToggle}
 						/>
-					</section>
-					<section>
+					</div>
+					<div>
 						<h2>PDF</h2>
 						<CurrentRow
 							block="pdf"
 							itemList={policyFlags.pdf}
 							onChangeHandler={changeToggle}
 						/>
-					</section>
-				</div>
-			</div>
-			<section className={classes.routes}>
-				<h3>Routes for non-compliant files</h3>
-				<p>
-					We will route that do not comply with the current for passage onto
-					separate file systems.Specified file systems and routing
-					mechanism(s) will be determined at the
-				</p>
-				<div className={classes.table}>
-					<div className={classes.tr}>
-						<div className={classes.th}>
-							<h3>API URL</h3>
-							<h3>Validated</h3>
-						</div>
 					</div>
-					<DomainField
-						name={userDomain}
-						onChangeInputHandler={(evt) => setUserDomain(evt.target.value)}
-					/>
 				</div>
-			</section>
-		</>
+				<RoutesForNonCompliantFiles
+					userDomain={userDomain}
+					changeInput={setUserDomain}
+				/>
+				<PolicyForNonCompliantFiles />
+			</div>
+		</div>
 	);
 };
 

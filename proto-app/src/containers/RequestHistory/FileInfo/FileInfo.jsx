@@ -12,7 +12,7 @@ import Checkbox from "../../../components/UI/Checkbox/Checkbox";
 import Badge from "../../../components/UI/Badge/Badge";
 
 const FileInfo = ({ data }) => {
-	const { fileId, outcome, timestamp, type } = data;
+	const { fileId, risk, timestamp, type } = data;
 
 	const [blockExpanded, setBlockExpanded] = useState({
 		issue: false,
@@ -22,9 +22,9 @@ const FileInfo = ({ data }) => {
 	});
 
 	let background = null;
-	if (outcome === "Safe") {
+	if (risk === "Safe") {
 		background = "#91CAA8";
-	} else if (outcome === "Blocked") {
+	} else if (risk === "Blocked") {
 		background = "#E6CC70";
 	}
 
@@ -35,7 +35,7 @@ const FileInfo = ({ data }) => {
 			<header className={classes.header}>
 				<h2>File ID: {fileId}</h2>
 				<div>
-					<span style={{ background }}>{outcome}</span>
+					<span style={{ background }}>{risk}</span>
 				</div>
 			</header>
 
@@ -56,7 +56,7 @@ const FileInfo = ({ data }) => {
 								<TableCell>{timestamp}</TableCell>
 								<TableCell>{fileId}</TableCell>
 								<TableCell>{type}</TableCell>
-								<TableCell>{outcome}</TableCell>
+								<TableCell>{risk}</TableCell>
 							</TableRow>
 						</TableBody>
 					</Table>

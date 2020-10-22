@@ -1,4 +1,5 @@
 .HistoryInfo {
+	height: 100%;
 	& h2,
 	h3,
 	p {
@@ -6,7 +7,11 @@
 		padding: 0;
 	}
 
-	& .header {
+	.policy {
+		height: 100%;
+	}
+
+	.header {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -19,11 +24,15 @@
 		color: #196480;
 		background: #e6e9ea;
 
-		& div {
+		h2 {
+			border: none;
+		}
+
+		div {
 			display: flex;
 		}
 
-		& span {
+		span {
 			padding: 0.5rem 1.5rem;
 			margin-right: 5rem;
 
@@ -34,7 +43,7 @@
 			border-radius: 15px;
 		}
 	}
-	& .flags {
+	.flags {
 		position: relative;
 		display: flex;
 		flex-direction: column;
@@ -45,20 +54,20 @@
 		border-radius: 0.6rem;
 		overflow: hidden;
 
-		& h3 {
+		h3 {
 			padding-left: 1rem;
 
 			text-transform: uppercase;
 			line-height: 4rem;
 			border-bottom: 1px solid #b6bfc9;
 		}
-		& .rowList {
+		.rowList {
 			margin: 1rem 3rem;
 
 			border: 1px solid #b6bfc9;
 			border-radius: 0.6rem;
 			overflow: hidden;
-			& h2 {
+			h2 {
 				margin-left: 1rem;
 
 				font-size: 1.3rem;
@@ -67,7 +76,7 @@
 		}
 	}
 
-	& .routes {
+	.routes {
 		position: relative;
 		display: flex;
 		flex-direction: column;
@@ -78,26 +87,26 @@
 		border-radius: 0.6rem;
 		overflow: hidden;
 
-		& h3 {
+		h3 {
 			padding-left: 1rem;
 
 			line-height: 4rem;
 			border-bottom: 1px solid #b6bfc9;
 		}
 
-		& p {
+		p {
 			padding: 4rem 10rem;
 		}
 
-		& .table {
+		.table {
 			padding: 1rem 1rem 4rem 1rem;
 
-			& .th {
+			.th {
 				display: flex;
 				justify-content: space-between;
 				color: #196480;
 
-				& h3 {
+				h3 {
 					margin-right: 4rem;
 					border: none;
 				}
@@ -105,13 +114,20 @@
 				p {
 					padding-left: 1rem;
 					width: 100%;
-				}
 
-				& p:last-child {
-					width: 14rem;
-					padding-left: 3rem;
+					&:last-child {
+						width: 14rem;
+						padding-left: 3rem;
+					}
 				}
 			}
 		}
 	}
+}
+
+.innerContent {
+	height: 100%;
+	overflow-y: auto;
+
+	padding-bottom: 10rem;
 }
