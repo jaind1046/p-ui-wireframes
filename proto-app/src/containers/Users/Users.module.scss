@@ -21,7 +21,7 @@
 		line-height: 4rem;
 	}
 
-	& button {
+	button {
 		border: 0;
 		outline: none;
 		background: none;
@@ -31,21 +31,26 @@
 }
 
 .table {
-	padding: 2rem 1rem 1rem 1rem;
-	& .th {
-		display: flex;
-		justify-content: space-between;
-		color: #196480;
-		& p {
-			padding-left: 1rem;
+	thead th {
+		position: relative;
 
-			white-space: nowrap;
+		padding: 1rem;
+
+		font-size: 1.2rem;
+		color: #196480;
+		border: none;
+	}
+	tbody {
+		border-top: 1px solid #54e0e8;
+
+		tr:last-child {
+			border-bottom: 1px solid #54e0e8;
 		}
-		& p:last-child {
-			white-space: nowrap;
-			width: 15rem;
-			padding-left: 3rem;
-			margin-right: 2rem;
-		}
+	}
+
+	input {
+		margin: 0;
+		height: 3rem;
+		margin-left: 2rem;
 	}
 }

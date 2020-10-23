@@ -1,5 +1,5 @@
 .Popup {
-	position: absolute;
+	//position: absolute;
 	z-index: 99;
 
 	padding: 2rem;
@@ -25,4 +25,13 @@
 
 		cursor: pointer;
 	}
+}
+
+.wrap {
+	position: absolute;
+	z-index: 99;
+
+	padding: 2rem;
+
+	background: transparent;
 }

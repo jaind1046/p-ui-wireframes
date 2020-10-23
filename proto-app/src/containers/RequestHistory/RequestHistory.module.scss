@@ -3,7 +3,6 @@
 }
 
 .wrapTable {
-	//position: relative;
 	padding: 0 3rem;
 
 	background: #ffffff;
@@ -19,9 +18,7 @@
 }
 
 .table {
-	color: #196480;
-
-	& th {
+	th {
 		height: 4rem;
 		font-size: 1.2rem;
 		padding: 0;
@@ -29,13 +26,13 @@
 		border: none;
 	}
 
-	& thead th {
+	thead th {
 		position: relative;
 		color: #196480;
 
 		cursor: pointer;
 
-		& .icon {
+		.icon {
 			position: absolute;
 			top: 0.5rem;
 			right: 6rem;
@@ -44,8 +41,7 @@
 		}
 	}
 
-	& .tbody {
+	tbody {
 		border-top: 1px solid #54e0e8;
-		border-bottom: 1px solid #54e0e8;
 	}
 }

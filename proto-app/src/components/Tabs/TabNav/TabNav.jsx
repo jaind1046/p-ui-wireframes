@@ -1,4 +1,5 @@
 import React from "react";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 import classes from "./TabNav.module.scss";
 
@@ -15,23 +16,38 @@ const TabNav = ({ tabs, isSelectedTab, onSetActiveTabHandler, children }) => {
 		}
 
 		return (
-			<li key={tab.name} className={clsLink.join(" ")}>
-				<button
-					className={clsButton.join(" ")}
-					onClick={() => onSetActiveTabHandler(tab.name)}
-				>
-					{icon ? <img src={icon} alt={tab.name} /> : null}
-					{tab.name}
-				</button>
-			</li>
+			<CSSTransition
+				key={tab.name}
+				timeout={300000}
+				mountOnEnter
+				unmountOnExit
+				classNames={{
+					enter: classes.tabEnter,
+					enterActive: classes.tabEnterActive,
+					enterDone: classes.tabEnterDone,
+					exit: classes.tabExit,
+					exitActive: classes.tabExitActive,
+					exitDone: classes.tabExitDone,
+				}}
+			>
+				<li className={clsLink.join(" ")}>
+					<button
+						className={clsButton.join(" ")}
+						onClick={() => onSetActiveTabHandler(tab.name)}
+					>
+						{icon ? <img src={icon} alt={tab.name} /> : null}
+						{tab.name}
+					</button>
+				</li>
+			</CSSTransition>
 		);
 	});
 
 	return (
-		<section className={classes.TabNav}>
-			<ul>{tabNav}</ul>
+		<div className={classes.TabNav}>
+			<TransitionGroup component={"ul"}>{tabNav}</TransitionGroup>
 			<div className={classes.tabwrap}>{children}</div>
-		</section>
+		</div>
 	);
 };
 

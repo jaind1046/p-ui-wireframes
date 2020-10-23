@@ -25,7 +25,7 @@ const Filters = ({ popupIsOpen, changeVisibilityPopup }) => {
 	const {
 		addFilterInput,
 		fileFilter,
-		outcomeFilter,
+		riskFilter,
 		selectedFilters,
 		removeFilter,
 	} = useContext(GlobalStoreContext);
@@ -43,21 +43,21 @@ const Filters = ({ popupIsOpen, changeVisibilityPopup }) => {
 	const filterList = [
 		{
 			name: "File Types",
-			onClickButtonHandler: () => {
+			onHoverButtonHandler: () => {
 				setOpenFileId(false);
 				setOpenFilter("File Types");
 			},
 		},
 		{
-			name: "Outcomes",
-			onClickButtonHandler: () => {
+			name: "Risk",
+			onHoverButtonHandler: () => {
 				setOpenFileId(false);
-				setOpenFilter("Outcomes");
+				setOpenFilter("Risk");
 			},
 		},
 		{
 			name: "File ID",
-			onClickButtonHandler: () => {
+			onHoverButtonHandler: () => {
 				setOpenFilter(null);
 				setOpenFileId((prevState) => !prevState);
 			},
@@ -104,9 +104,9 @@ const Filters = ({ popupIsOpen, changeVisibilityPopup }) => {
 			filterStyle = classes.popupFilterFileType;
 			break;
 
-		case "Outcomes":
-			filter = outcomeFilter;
-			filterStyle = classes.popupFilterOutcome;
+		case "Risk":
+			filter = riskFilter;
+			filterStyle = classes.popupFilterRisk;
 			break;
 		default:
 			filter = null;
@@ -133,7 +133,7 @@ const Filters = ({ popupIsOpen, changeVisibilityPopup }) => {
 		<section className={classes.Filters}>
 			<div className={classes.wrap}>
 				<div className={classes.header}>
-					<h2 className={classes.head}>Filters</h2>
+					<h3 className={classes.head}>Filters</h3>
 
 					<button
 						className={clsMoreFilters.join(" ")}

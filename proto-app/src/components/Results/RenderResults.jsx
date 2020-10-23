@@ -1,4 +1,6 @@
 import React from "react";
+import { CSSTransition } from "react-transition-group";
+
 import classes from "./RenderResults.module.scss";
 
 import RenderAnalysis from "./RenderAnalysis/RenderAnalysis";
@@ -69,8 +71,19 @@ function RenderResults({
 					</div>
 				</div>
 			);
-		} else {
-			return (
+		}
+
+		return (
+			<CSSTransition
+				in={isShowResult}
+				timeout={300}
+				classNames={{
+					enterActive: classes.fadeEnterActive,
+					exitActive: classes.fadeExitActive,
+				}}
+				mountOnEnter
+				unmountOnExit
+			>
 				<div className={[classes.RenderResults, classes.result].join(" ")}>
 					<SectionTitle>File is clean!</SectionTitle>
 					<DownloadAnalysisReport
@@ -79,8 +92,8 @@ function RenderResults({
 					/>
 					<FileAttributes file={file} fileType={fileType} />
 				</div>
-			);
-		}
+			</CSSTransition>
+		);
 	}
 	return null;
 }

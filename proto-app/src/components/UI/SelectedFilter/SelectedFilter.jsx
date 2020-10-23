@@ -7,8 +7,8 @@ import ButtonClose from "../ButtonClose/ButtonClose";
 const SelectedFilter = ({ id, filter, value, titleColor, remove }) => {
 	const clsFooter = [classes.footer];
 
-	if (filter === "Outcome") {
-		clsFooter.push(classes.outcome);
+	if (filter === "Risk") {
+		clsFooter.push(classes.risk);
 	}
 
 	return (

@@ -7,26 +7,29 @@ const Popup = ({
 	closePopupHover,
 	externalStyles,
 }) => {
-	const buttonList = links.map(({ name, icon, onClickButtonHandler }) => {
-		return (
-			<button
-				key={name}
-				onClick={onClickButtonHandler}
-				style={{
-					backgroundImage: `url(${icon})`,
-				}}
-			>
-				<p>{name}</p>
-			</button>
-		);
-	});
+	const buttonList = links.map(
+		({ name, icon, onHoverButtonHandler, onClickButtonHandler }) => {
+			return (
+				<button
+					key={name}
+					onMouseEnter={onHoverButtonHandler}
+					onClick={onClickButtonHandler}
+					style={{
+						backgroundImage: `url(${icon})`,
+					}}
+				>
+					<p>{name}</p>
+				</button>
+			);
+		}
+	);
 	return (
 		<div
-			className={[classes.Popup, externalStyles].join(" ")}
+			className={[classes.wrap, externalStyles].join(" ")}
 			onMouseEnter={openPopupHover}
 			onMouseLeave={closePopupHover}
 		>
-			{buttonList}
+			<div className={[classes.Popup].join(" ")}>{buttonList}</div>
 		</div>
 	);
 };

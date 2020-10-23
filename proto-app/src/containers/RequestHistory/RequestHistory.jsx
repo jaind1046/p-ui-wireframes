@@ -18,6 +18,7 @@ import {
 
 import FileRow from "./FileRow/FileRow";
 import Filters from "../../components/Filters/Filters";
+import Backdrop from "../../components/UI/Backdrop/Backdrop";
 
 const RequestHistory = () => {
 	const [sortedRows, setSortedRows] = useState(null);
@@ -73,7 +74,7 @@ const RequestHistory = () => {
 				);
 				break;
 
-			case "outcome":
+			case "risk":
 				setSortedRows(
 					rows.sort((a, b) => {
 						if (a.props.type < b.props.type) return -1;
@@ -102,7 +103,7 @@ const RequestHistory = () => {
 	const fileInfo = filteredUserfiles.find((it) => it.id === rowId);
 
 	const rows = filteredUserfiles.map(
-		({ id, timestamp, fileId, name, type, outcome }) => {
+		({ id, timestamp, fileId, name, type, risk }) => {
 			return (
 				<FileRow
 					key={id}
@@ -111,7 +112,7 @@ const RequestHistory = () => {
 					fileId={fileId}
 					name={name}
 					type={type}
-					outcome={outcome}
+					risk={risk}
 					onRowClickHandler={(evt) => openInfoModal(evt.target.id)}
 				/>
 			);
@@ -148,10 +149,8 @@ const RequestHistory = () => {
 							</TableCell>
 
 							<TableCell>
-								<TableSortLabel
-									onClick={() => getSortedRows(rows, "outcome")}
-								>
-									Outcome
+								<TableSortLabel onClick={() => getSortedRows(rows, "risk")}>
+									Risk
 								</TableSortLabel>
 							</TableCell>
 						</TableRow>
@@ -162,9 +161,12 @@ const RequestHistory = () => {
 				</Table>
 			</div>
 			{openModal && (
-				<Modal onCloseHandler={closeInfoModal}>
-					<FileInfo data={fileInfo} />
-				</Modal>
+				<>
+					<Modal onCloseHandler={closeInfoModal}>
+						<FileInfo data={fileInfo} />
+					</Modal>
+					<Backdrop onClickOutside={closeInfoModal} />
+				</>
 			)}
 		</article>
 	);

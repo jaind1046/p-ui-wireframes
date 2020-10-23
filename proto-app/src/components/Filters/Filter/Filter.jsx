@@ -45,7 +45,7 @@ const Filter = ({ filter, checkboxList, externalStyles }) => {
 			className={[classes.Filter, externalStyles].join(" ")}
 		>
 			<FormLabel component="legend">
-				{filter === "Outcome" ? "" : filter}
+				{filter === "Risk" ? "" : filter}
 			</FormLabel>
 			<FormGroup
 				className={classes.formGroup}

@@ -15,6 +15,7 @@ import HistoryRow from "./HistoryRow/HistoryRow";
 import Pagination from "../../../components/UI/Pagination/Pagination";
 import Modal from "../../../components/UI/Modal/Modal";
 import HistoryInfo from "../../../containers/Policy/History/HistoryInfo/HistoryInfo";
+import Backdrop from "../../../components/UI/Backdrop/Backdrop";
 
 const History = ({ setPrevPolicy, isCurrent }) => {
 	const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -49,9 +50,12 @@ const History = ({ setPrevPolicy, isCurrent }) => {
 				</div>
 			</div>
 			{modalIsOpen && (
-				<Modal onCloseHandler={() => setModalIsOpen(false)}>
-					<HistoryInfo prevPolicy={previously} />
-				</Modal>
+				<>
+					<Modal onCloseHandler={() => setModalIsOpen(false)}>
+						<HistoryInfo prevPolicy={previously} />
+					</Modal>
+					<Backdrop onClickOutside={() => setModalIsOpen(false)} />
+				</>
 			)}
 		</>
 	);
