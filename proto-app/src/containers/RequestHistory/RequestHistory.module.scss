@@ -3,10 +3,13 @@
 }
 
 .wrapTable {
-	padding: 0 3rem;
+	height: 100vh;
+	padding: 2rem;
 
 	background: #ffffff;
 
+	border: 1px solid #b6bfc9;
+	border-radius: 0.6rem;
 	transition: all 0.5s;
 
 	&.notActive {
@@ -28,7 +31,7 @@
 
 	thead th {
 		position: relative;
-		color: #196480;
+		color: #0c3450;
 
 		cursor: pointer;
 
@@ -42,6 +45,6 @@
 	}
 
 	tbody {
-		border-top: 1px solid #54e0e8;
+		border-top: 1px solid #4592b0;
 	}
 }

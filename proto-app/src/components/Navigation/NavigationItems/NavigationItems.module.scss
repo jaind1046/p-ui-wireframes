@@ -9,12 +9,15 @@
 	transition: all 0s 0s;
 
 	&.menuExpanded {
-		opacity: 1;
 		display: block;
+
+		width: 100%;
+
+		opacity: 1;
 		visibility: visible;
 		transition: visibility 0s 0.3s;
 
-		& p {
+		p {
 			opacity: 1;
 			visibility: visible;
 		}

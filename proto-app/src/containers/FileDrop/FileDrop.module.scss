@@ -1,5 +1,7 @@
 .FileDrop {
 	height: 100%;
+	border: 1px solid #b6bfc9;
+	border-radius: 0.6rem;
 
 	.dropzoneWrap {
 		display: flex;
@@ -12,6 +14,8 @@
 		background: #ffffff;
 
 		overflow: hidden;
+
+		border-radius: 0.6rem;
 
 		.processed {
 			position: relative;

@@ -23,8 +23,8 @@ import ChangePassword from "../../ChangePassword/ChangePassword";
 
 const navLinks = [
 	{
-		link: "/dashboard",
-		name: "Dashboard",
+		link: "/analytics",
+		name: "Analytics",
 		icon: dashIcon,
 		id: "id-1",
 		exact: true,

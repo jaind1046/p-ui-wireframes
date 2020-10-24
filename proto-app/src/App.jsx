@@ -22,7 +22,7 @@ import PassReminder from "./components/PassReminder/PassReminder";
 import Users from "./containers/Users/Users";
 import RequestHistory from "./containers/RequestHistory/RequestHistory";
 import Policy from "./containers/Policy/Policy";
-import Dashboard from "./containers/Dashboard/Dashboard";
+import Analytics from "./containers/Analytics/Analytics";
 import FileDrop from "./containers/FileDrop/FileDrop";
 
 // TODO: Remove from production, for prototype only
@@ -87,7 +87,7 @@ const App = () => {
 									>
 										<Main showTitle title={title} expanded={navExpanded}>
 											<Switch location={location}>
-												<Route path="/dashboard" component={Dashboard} />
+												<Route path="/analytics" component={Analytics} />
 												<Route
 													path="/request-history"
 													component={RequestHistory}
