@@ -45,3 +45,39 @@
 		}
 	}
 }
+
+.openPopupEnterActive {
+	animation: popup 300ms linear forwards;
+}
+
+.closePopupExitActive {
+	animation: popup 300ms linear alternate-reverse forwards;
+}
+
+.openBackdropEnterActive {
+	animation: fadein 300ms linear forwards;
+}
+
+.closeBackdropExitActive {
+	animation: fadein 300ms linear alternate-reverse forwards;
+}
+
+@keyframes popup {
+	from {
+		top: 100%;
+		opacity: 0;
+	}
+	to {
+		top: 50%;
+		opacity: 1;
+	}
+}
+
+@keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 0.7;
+	}
+}

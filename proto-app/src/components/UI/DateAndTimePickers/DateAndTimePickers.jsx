@@ -134,7 +134,6 @@ const DateAndTimePickers = ({ externalStyles }) => {
 					enterActive: classes.openPopupEnterActive,
 					exit: classes.closePopupExit,
 					exitActive: classes.closePopupExitActive,
-					exitDone: classes.closePopupExitDone,
 				}}
 			>
 				<Popup
