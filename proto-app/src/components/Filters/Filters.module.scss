@@ -2,7 +2,7 @@
 	background: #e6e9ea;
 	margin-bottom: 1rem;
 
-	cursor: pointer;
+	//cursor: pointer;
 
 	& h2 {
 		margin: 0;
@@ -52,6 +52,8 @@
 			background-position: center center;
 			background-image: url("../../assets/svg/filters/expand-arrow-grey.svg");
 			transition: all 0.3s;
+
+			cursor: pointer;
 		}
 
 		& .arrow.rotate::before {
@@ -75,6 +77,8 @@
 			box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
 
 			transition: all 0.3s;
+
+			cursor: pointer;
 
 			&.hide {
 				right: -10px;

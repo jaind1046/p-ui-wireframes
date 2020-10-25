@@ -77,7 +77,6 @@ const Toolbar = ({ expanded, navExpandedHandler }) => {
 			name: "Change password",
 			icon: changePassIcon,
 			onClickButtonHandler: () => {
-				console.log("Change password");
 				setIsOpenPopup(false);
 				openChangePass();
 			},
@@ -111,7 +110,6 @@ const Toolbar = ({ expanded, navExpandedHandler }) => {
 				classNames={{
 					enter: classes.openPopupEnter,
 					enterActive: classes.openPopupEnterActive,
-					emterDone: classes.openPopupEnterDone,
 					exit: classes.closePopupExit,
 					exitActive: classes.closePopupExitActive,
 					exitDone: classes.closePopupExitDone,

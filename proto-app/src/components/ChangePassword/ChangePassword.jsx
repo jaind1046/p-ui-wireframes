@@ -28,10 +28,8 @@ const ChangePassword = ({ closeModal, externalStyles, isOpenModal }) => {
 			classNames={{
 				enter: classes.openEnter,
 				enterActive: classes.openEnterActive,
-				emterDone: classes.openEnterDone,
 				exit: classes.closeExit,
 				exitActive: classes.closeExitActive,
-				exitDone: classes.closeExitDone,
 			}}
 		>
 			<section className={[classes.ChangePassword, externalStyles].join(" ")}>

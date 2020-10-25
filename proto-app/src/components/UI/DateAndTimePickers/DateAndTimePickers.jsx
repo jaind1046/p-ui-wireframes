@@ -3,22 +3,35 @@ import { CSSTransition } from "react-transition-group";
 import { createMuiTheme } from "@material-ui/core";
 import { ThemeProvider } from "@material-ui/styles";
 
-import { KeyboardDateTimePicker } from "@material-ui/pickers";
+import { DateTimePicker } from "@material-ui/pickers";
 
 import classes from "./DateAndTimePickers.module.scss";
 import Popup from "../Popup/Popup";
 
 const defaultMaterialTheme = createMuiTheme({
+	root: {
+		background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+		borderRadius: 3,
+		border: 0,
+		color: "white",
+		height: 48,
+		padding: "0 30px",
+		boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
+	},
 	palette: {
 		primary: { main: "#ffffff" },
 	},
 	overrides: {
+		MuiInput: {
+			input: {
+				cursor: "pointer",
+			},
+		},
 		MuiPickersDay: {
 			daySelected: {
 				backgroundColor: "#4592b0",
 			},
 		},
-
 		MuiPickersClockNumber: {
 			clockNumberSelected: {
 				backgroundColor: "#4592b0",
@@ -27,16 +40,31 @@ const defaultMaterialTheme = createMuiTheme({
 	},
 });
 
-const timeIntervalList = [
-	{ name: "1 Hour" },
-	{ name: "12 Hours" },
-	{ name: "24 Hours" },
-	{ name: "Last 7 Days" },
-	{ name: "Custom Range" },
-];
-
 const DateAndTimePickers = ({ externalStyles }) => {
 	const [isOpen, setIsOpen] = useState(false);
+
+	const timeIntervalList = [
+		{
+			name: "1 Hour",
+			onClickButtonHandler: () => setIsOpen((prevState) => !prevState),
+		},
+		{
+			name: "12 Hours",
+			onClickButtonHandler: () => setIsOpen((prevState) => !prevState),
+		},
+		{
+			name: "24 Hours",
+			onClickButtonHandler: () => setIsOpen((prevState) => !prevState),
+		},
+		{
+			name: "Last 7 Days",
+			onClickButtonHandler: () => setIsOpen((prevState) => !prevState),
+		},
+		{
+			name: "Custom Range",
+			onClickButtonHandler: () => setIsOpen((prevState) => !prevState),
+		},
+	];
 
 	const date = new Date();
 
@@ -56,8 +84,9 @@ const DateAndTimePickers = ({ externalStyles }) => {
 			</button>
 
 			<ThemeProvider theme={defaultMaterialTheme}>
-				<KeyboardDateTimePicker
+				<DateTimePicker
 					value={earlierDate}
+					InputProps={{ disableUnderline: true, backgroundColor: "red" }}
 					variant="inline"
 					onChange={handleDateChange}
 					disableFuture
@@ -65,8 +94,9 @@ const DateAndTimePickers = ({ externalStyles }) => {
 					autoOk
 				/>
 				<p>-</p>
-				<KeyboardDateTimePicker
+				<DateTimePicker
 					value={selectedDate}
+					InputProps={{ disableUnderline: true }}
 					variant="inline"
 					onChange={handleDateChange}
 					disableFuture
@@ -83,7 +113,6 @@ const DateAndTimePickers = ({ externalStyles }) => {
 				classNames={{
 					enter: classes.openPopupEnter,
 					enterActive: classes.openPopupEnterActive,
-					emterDone: classes.openPopupEnterDone,
 					exit: classes.closePopupExit,
 					exitActive: classes.closePopupExitActive,
 					exitDone: classes.closePopupExitDone,

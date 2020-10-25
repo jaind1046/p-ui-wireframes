@@ -11,39 +11,45 @@
 	}
 }
 
-.buttons {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	height: 4rem;
-
-	margin: 2rem 0;
-
-	button {
-		width: 15rem;
-		margin-right: 3rem;
-
-		&:first-child {
-			color: #6697a6;
-		}
-		&:last-child {
-			background: #4592b0;
-		}
-	}
-}
-
 .header {
+	position: relative;
 	display: flex;
-
-	width: 50rem;
+	justify-content: space-between;
 
 	margin-bottom: 2rem;
 
-	border: 1px solid #b6bfc9;
-	border-radius: 0.6rem;
+	.buttons {
+		//position: absolute;
+		//top: 0;
+		//right: 0;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		height: 4rem;
+
+		margin: 2rem 0;
+
+		button {
+			width: 15rem;
+			margin-right: 3rem;
+
+			&:first-child {
+				color: #6697a6;
+			}
+			&:last-child {
+				background: #4592b0;
+			}
+		}
+	}
 
 	.table {
+		width: 50rem;
+
+		border: 1px solid #b6bfc9;
+		border-radius: 0.6rem;
+
 		th {
 			padding: 0.4rem;
 			padding-right: 5rem;
