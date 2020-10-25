@@ -6,14 +6,16 @@ const Popup = ({
 	openPopupHover,
 	closePopupHover,
 	externalStyles,
+	onClickButton,
 }) => {
 	const buttonList = links.map(
-		({ name, icon, onHoverButtonHandler, onClickButtonHandler }) => {
+		({ name, icon, value, onHoverButtonHandler, onClickButtonHandler }) => {
 			return (
 				<button
 					key={name}
+					value={value}
 					onMouseEnter={onHoverButtonHandler}
-					onClick={onClickButtonHandler}
+					onClick={onClickButtonHandler || onClickButton}
 					style={{
 						backgroundImage: `url(${icon})`,
 					}}

@@ -7,7 +7,7 @@
 	background-color: #fff;
 	border-radius: 0.6rem;
 	box-shadow: 0 3px 16px 1.6px rgba(0, 0, 0, 0.34);
-	transition: 0.3s opacity, 0.3s transform;
+	transition: 0.3s opacity linear, 0.3s transform linear;
 
 	& button {
 		display: flex;
@@ -31,7 +31,7 @@
 	position: absolute;
 	z-index: 99;
 
-	padding: 2rem;
+	padding: 1rem;
 
 	background: transparent;
 }
