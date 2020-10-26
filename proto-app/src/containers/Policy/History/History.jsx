@@ -28,7 +28,7 @@ const History = ({ setPrevPolicy, isCurrent }) => {
 				key={id}
 				id={id}
 				isCurrent={isCurrent}
-				openModalPreviousPolicyHandler={setModalIsOpen}
+				openModalPreviousPolicyHandler={() => setModalIsOpen(true)}
 				onActivePrevPolicyHandler={setPrevPolicy}
 				timestamp={timestamp}
 				updatedBy={userEmail}

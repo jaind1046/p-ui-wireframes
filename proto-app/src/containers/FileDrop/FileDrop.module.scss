@@ -79,11 +79,12 @@
 
 		font-size: 2.4rem;
 		font-weight: 300;
-		line-height: 0.8rem;
+		text-align: center;
+		padding: 0px 5rem;
 
 		color: #ffffff;
 	}
-	& .reject {
+	.reject {
 		display: none;
 	}
 }

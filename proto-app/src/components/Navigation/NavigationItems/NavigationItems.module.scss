@@ -2,7 +2,7 @@
 	height: calc(100% - 19rem);
 	width: 100%;
 
-	& p {
+	p {
 		opacity: 0;
 		visibility: hidden;
 	}
@@ -25,9 +25,7 @@
 		}
 	}
 
-	& ul {
-		overflow: hidden;
-
+	ul {
 		height: 100%;
 	}
 }
