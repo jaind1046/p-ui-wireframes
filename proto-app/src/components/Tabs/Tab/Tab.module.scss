@@ -2,18 +2,18 @@
 	width: calc(100% - 4rem);
 	height: calc(100% - 2rem);
 
-	border-radius: 0.6rem;
-	border: 1px solid #b6bfc9;
-	border-radius: 0.6rem;
-
-	//overflow-y: auto;
+	//border-radius: 0.6rem;
+	//border: 1px solid #b6bfc9;
+	//border-radius: 0.6rem;
 
 	.innerContent {
-		background: #ffffff;
+		height: 100%;
 
 		opacity: 1;
+		background: #ffffff;
+		border-radius: 0.6rem;
+
 		transition: opacity 500ms ease-in-out;
-		height: 100%;
 	}
 }
 

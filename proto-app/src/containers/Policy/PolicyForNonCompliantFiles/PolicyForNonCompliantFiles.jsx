@@ -6,7 +6,7 @@ import Toggles from "./Toggles/Toggles";
 const PolicyForNonCompliantFiles = () => {
 	return (
 		<div className={classes.PolicyForNonCompliantFiles}>
-			<h2>Policy for non-compliant files</h2>
+			<h2 className={classes.head}>Policy for non-compliant files</h2>
 			<section className={classes.info}>
 				<div>
 					<h3>

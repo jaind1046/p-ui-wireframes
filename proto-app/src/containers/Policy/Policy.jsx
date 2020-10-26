@@ -5,6 +5,8 @@ import { PolicyContext } from "../../context/policy/policy-context";
 import classes from "./Policy.module.scss";
 
 import prevPolicy from "../../data/prevPolicy.json";
+import currentPolicyIcon from "../../assets/svg/policy/current-policy-icon.svg";
+import previousPolicyIcon from "../../assets/svg/policy/previous-policy-icon.svg";
 
 import Current from "./Current/Current";
 import History from "./History/History";
@@ -30,7 +32,10 @@ const Policy = () => {
 	const [currentPolicy, setCurrentPolicy] = useState(true);
 	const [selectedTab, setSelectedTab] = useState("Current");
 
-	const tabs = [{ name: "Current" }, { name: "History" }];
+	const tabs = [
+		{ name: "Current", icon: currentPolicyIcon },
+		{ name: "History", icon: previousPolicyIcon },
+	];
 
 	return (
 		<article className={classes.Policy}>

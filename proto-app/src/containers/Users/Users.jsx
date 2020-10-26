@@ -9,7 +9,7 @@ import {
 
 import classes from "./Users.module.scss";
 
-import UsersIcon from "../../assets/users-icon.svg";
+//import UsersIcon from "../../assets/users-icon.svg";
 import UsersIconSelected from "../../assets/users-icon-selected.svg";
 
 // import RolesIcon from "../../assets/roles-icon.svg";
@@ -31,7 +31,7 @@ const users = [
 //const userTypes = ["Administrator", "User"];
 
 const tabs = [
-	{ name: "Users", icon: UsersIcon, iconSelected: UsersIconSelected },
+	{ name: "Users", icon: UsersIconSelected, iconSelected: UsersIconSelected },
 ];
 
 const Users = () => {
@@ -50,17 +50,22 @@ const Users = () => {
 				onSetActiveTabHandler={(tab) => setSelectedTab(tab)}
 			>
 				<Tab isSelected={selectedTab === "Users"}>
-					<Table className={classes.table}>
-						<TableHead>
-							<TableRow>
-								<TableCell>Name</TableCell>
-								<TableCell>Email</TableCell>
-								<TableCell>User Group</TableCell>
-								<TableCell>Confirmed</TableCell>
-							</TableRow>
-						</TableHead>
-						<TableBody>{userFields}</TableBody>
-					</Table>
+					<div className={classes.wrap}>
+						<h2 className={classes.head}>Users</h2>
+						<div className={classes.block}>
+							<Table className={classes.table}>
+								<TableHead>
+									<TableRow>
+										<TableCell>Name</TableCell>
+										<TableCell>Email</TableCell>
+										<TableCell>User Group</TableCell>
+										<TableCell>Confirmed</TableCell>
+									</TableRow>
+								</TableHead>
+								<TableBody>{userFields}</TableBody>
+							</Table>
+						</div>
+					</div>
 				</Tab>
 			</TabNav>
 		</section>

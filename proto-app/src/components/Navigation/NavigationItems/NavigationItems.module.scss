@@ -1,27 +1,31 @@
 .NavigationItems {
 	height: calc(100% - 19rem);
+	width: 100%;
 
-	& p {
+	p {
 		opacity: 0;
 		visibility: hidden;
 	}
 
-	transition: all 0s 0s;
+	transition: all 0s 300ms;
 
 	&.menuExpanded {
-		opacity: 1;
 		display: block;
-		visibility: visible;
-		transition: visibility 0s 0.3s;
 
-		& p {
+		width: 100%;
+
+		opacity: 1;
+		visibility: visible;
+		transition: visibility 0s 300ms;
+
+		p {
 			opacity: 1;
 			visibility: visible;
+			transition: visibility 0s 300ms;
 		}
 	}
 
-	& ul {
-		overflow-y: auto;
+	ul {
 		height: 100%;
 	}
 }

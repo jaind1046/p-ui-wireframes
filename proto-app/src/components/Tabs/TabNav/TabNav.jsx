@@ -12,7 +12,7 @@ const TabNav = ({ tabs, isSelectedTab, onSetActiveTabHandler, children }) => {
 		if (tab.name === isSelectedTab) {
 			clsLink.push(classes.active);
 			clsButton.push(classes.active);
-			icon = tab.iconSelected;
+			//icon = tab.iconSelected;
 		}
 
 		return (

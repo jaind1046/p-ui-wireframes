@@ -3,7 +3,7 @@ import { CSSTransition } from "react-transition-group";
 import { createMuiTheme } from "@material-ui/core";
 import { ThemeProvider } from "@material-ui/styles";
 
-import { KeyboardDateTimePicker } from "@material-ui/pickers";
+import { DateTimePicker } from "@material-ui/pickers";
 
 import classes from "./DateAndTimePickers.module.scss";
 import Popup from "../Popup/Popup";
@@ -13,12 +13,16 @@ const defaultMaterialTheme = createMuiTheme({
 		primary: { main: "#ffffff" },
 	},
 	overrides: {
+		MuiInput: {
+			input: {
+				cursor: "pointer",
+			},
+		},
 		MuiPickersDay: {
 			daySelected: {
 				backgroundColor: "#4592b0",
 			},
 		},
-
 		MuiPickersClockNumber: {
 			clockNumberSelected: {
 				backgroundColor: "#4592b0",
@@ -27,72 +31,116 @@ const defaultMaterialTheme = createMuiTheme({
 	},
 });
 
-const timeIntervalList = [
-	{ name: "1 Hour" },
-	{ name: "12 Hours" },
-	{ name: "24 Hours" },
-	{ name: "Last 7 Days" },
-	{ name: "Custom Range" },
-];
-
 const DateAndTimePickers = ({ externalStyles }) => {
-	const [isOpen, setIsOpen] = useState(false);
+	const [popupIsOpen, setPopupIsOpen] = useState(false);
+	const [pickerIsOpen, setPickerIsOpen] = useState(false);
 
-	const date = new Date();
+	const [firstSelectedDate, setFirstSelectedDate] = useState(null);
+	const [secondSelectedDate, setSecondSelectedDate] = useState(null);
 
-	let earlierDate = new Date();
-	earlierDate.setMonth(date.getMonth() - 1);
-	earlierDate = earlierDate.toISOString().substr(0, 19);
+	const timeIntervalList = [
+		{
+			name: "1 Hour",
+			value: "hour",
+		},
+		{
+			name: "12 Hours",
+			value: "twelvehours",
+		},
+		{
+			name: "24 Hours",
+			value: "twentyfourhours",
+		},
+		{
+			name: "Last 7 Days",
+			value: "sevendays",
+		},
+		{
+			name: "Custom Range",
+			value: "customrange",
+		},
+	];
 
-	const [selectedDate, handleDateChange] = useState(new Date());
+	const getIntervalTime = (int) => {
+		switch (int) {
+			case "hour":
+				setFirstSelectedDate(new Date().setHours(new Date().getHours() - 1));
+				break;
+			case "twelvehours":
+				setFirstSelectedDate(new Date().setHours(new Date().getHours() - 12));
+				break;
+			case "twentyfourhours":
+				setFirstSelectedDate(new Date().setHours(new Date().getHours() - 24));
+				break;
+			case "sevendays":
+				setFirstSelectedDate(
+					new Date().setHours(new Date().getHours() - 168)
+				);
+				break;
+			case "customrange":
+				setPickerIsOpen(true);
+				setFirstSelectedDate(new Date());
+				break;
+			default:
+				setFirstSelectedDate(new Date());
+				break;
+		}
+		setSecondSelectedDate(null);
+		setPopupIsOpen(false);
+	};
 
 	return (
 		<div className={[classes.DateAndTimePickers, externalStyles].join(" ")}>
 			<button
 				className={classes.intervalButton}
-				onClick={() => setIsOpen((prevState) => !prevState)}
+				onClick={() => setPopupIsOpen(true)}
 			>
 				Date/Time
 			</button>
 
 			<ThemeProvider theme={defaultMaterialTheme}>
-				<KeyboardDateTimePicker
-					value={earlierDate}
+				<DateTimePicker
+					value={firstSelectedDate}
+					InputProps={{ disableUnderline: true }}
 					variant="inline"
-					onChange={handleDateChange}
+					onChange={setFirstSelectedDate}
 					disableFuture
 					format="dd/MM/yyyy hh:mm a"
 					autoOk
+					open={pickerIsOpen}
+					onOpen={() => setPickerIsOpen(true)}
+					onClose={() => setPickerIsOpen(false)}
 				/>
 				<p>-</p>
-				<KeyboardDateTimePicker
-					value={selectedDate}
+				<DateTimePicker
+					value={secondSelectedDate}
+					InputProps={{ disableUnderline: true }}
 					variant="inline"
-					onChange={handleDateChange}
+					onChange={setSecondSelectedDate}
 					disableFuture
 					format="dd/MM/yyyy hh:mm a"
 					autoOk
+					disabled={!firstSelectedDate}
 				/>
 			</ThemeProvider>
 
 			<CSSTransition
-				in={isOpen}
+				in={popupIsOpen}
 				timeout={300}
 				mountOnEnter
 				unmountOnExit
 				classNames={{
 					enter: classes.openPopupEnter,
 					enterActive: classes.openPopupEnterActive,
-					emterDone: classes.openPopupEnterDone,
 					exit: classes.closePopupExit,
 					exitActive: classes.closePopupExitActive,
-					exitDone: classes.closePopupExitDone,
 				}}
 			>
 				<Popup
 					links={timeIntervalList}
 					externalStyles={classes.popup}
-					closePopupHover={() => setIsOpen((prevState) => !prevState)}
+					closePopupHover={() => setPopupIsOpen(false)}
+					onClickButton={(evt) => getIntervalTime(evt.currentTarget.value)}
 				/>
 			</CSSTransition>
 		</div>
