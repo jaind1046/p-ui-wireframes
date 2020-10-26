@@ -95,8 +95,6 @@ const Filters = ({ popupIsOpen, changeVisibilityPopup }) => {
 		setFileIdValue(inputValue);
 		setIsValid(checkValidity(inputValue));
 		setIsTouched(true);
-		changeVisibilityPopup(false);
-		setOpenFilter(null);
 	};
 
 	const submitHandler = (evt) => {
