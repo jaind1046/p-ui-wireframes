@@ -70,11 +70,6 @@ const Filters = ({ popupIsOpen, changeVisibilityPopup }) => {
 		setOpenFilter(null);
 	};
 
-	const closeFilterRowHandler = () => {
-		changeVisibilityPopup(false);
-		setOpenFilter(null);
-	};
-
 	const clickOnAddFilterButton = () => {
 		changeVisibilityPopup((prev) => !prev);
 		setOpenFileId(false);
@@ -100,6 +95,8 @@ const Filters = ({ popupIsOpen, changeVisibilityPopup }) => {
 		setFileIdValue(inputValue);
 		setIsValid(checkValidity(inputValue));
 		setIsTouched(true);
+		changeVisibilityPopup(false);
+		setOpenFilter(null);
 	};
 
 	const submitHandler = (evt) => {
@@ -224,7 +221,6 @@ const Filters = ({ popupIsOpen, changeVisibilityPopup }) => {
 									type="submit"
 									className={classes.addButton}
 									disabled={!isValid}
-									onClick={closeFilterRowHandler}
 								>
 									+ ADD
 								</button>
