@@ -10,6 +10,7 @@ import Button from "../UI/Button/Button";
 import Popup from "../UI/Popup/Popup";
 import PopupFilter from "../UI/PopupFilter/PopupFilter";
 import SelectedFilter from "../UI/SelectedFilter/SelectedFilter";
+import DateAndTimePickers from "../UI/DateAndTimePickers/DateAndTimePickers";
 import Input from "../UI/Input/Input";
 import Daterangepicker from "../UI/Daterangepicker/Daterangepicker";
 
@@ -65,7 +66,7 @@ const Filters = ({ popupIsOpen, changeVisibilityPopup }) => {
 	];
 
 	const openFilterRowHandler = () => {
-		setOpenFilterRow(true);
+		setOpenFilterRow((prev) => !prev);
 		changeVisibilityPopup(false);
 		setOpenFilter(null);
 	};
@@ -157,7 +158,8 @@ const Filters = ({ popupIsOpen, changeVisibilityPopup }) => {
 						className={clsArrow.join(" ")}
 					/>
 				</div>
-				<Daterangepicker externalStyles={classes.pickers} />
+				{/*<DateAndTimePickers externalStyles={classes.pickers} />*/}
+				<Daterangepicker />
 				<div className={classes.footer}>
 					<div className={clsList.join(" ")}>
 						{openFilterRow && (
