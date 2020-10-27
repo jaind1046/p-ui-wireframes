@@ -158,8 +158,7 @@ const Filters = ({ popupIsOpen, changeVisibilityPopup }) => {
 						className={clsArrow.join(" ")}
 					/>
 				</div>
-				{/*<DateAndTimePickers externalStyles={classes.pickers} />*/}
-				<Daterangepicker />
+				<Daterangepicker externalStyles={classes.pickers} />
 				<div className={classes.footer}>
 					<div className={clsList.join(" ")}>
 						{openFilterRow && (
