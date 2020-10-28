@@ -33,26 +33,18 @@ const Daterangepicker = ({ externalStyles }) => {
 						format: "DD/MM/YYYY hh:mm A",
 					},
 					ranges: {
-						Today: [moment().toDate(), moment().toDate()],
-						Yesterday: [
-							moment().subtract(1, "days").toDate(),
-							moment().subtract(1, "days").toDate(),
-						],
-						"Last 7 Days": [
-							moment().subtract(6, "days").toDate(),
+						//Today: [moment().toDate(), moment().toDate()],
+						"1 Hour": [
+							moment().subtract(1, "hour").toDate(),
 							moment().toDate(),
 						],
-						"Last 30 Days": [
-							moment().subtract(29, "days").toDate(),
+						"12 Hours": [
+							moment().subtract(12, "hour").toDate(),
 							moment().toDate(),
 						],
-						"This Month": [
-							moment().startOf("month").toDate(),
-							moment().endOf("month").toDate(),
-						],
-						"Last Month": [
-							moment().subtract(1, "month").startOf("month").toDate(),
-							moment().subtract(1, "month").endOf("month").toDate(),
+						"24 Hours": [
+							moment().subtract(24, "hour").toDate(),
+							moment().toDate(),
 						],
 					},
 				}}
