@@ -5,7 +5,7 @@ import classes from "./Dashboard.module.scss";
 import LineChart from "../../components/UI/Charts/LineChart/LineChart";
 import PieChart from "../../components/UI/Charts/PieChart/PieChart";
 import InfoBlock from "../../components/UI/InfoBlock/InfoBlock";
-import DateAndTimePickers from "../../components/UI/DateAndTimePickers/DateAndTimePickers";
+import Daterangepicker from "../../components/UI/Daterangepicker/Daterangepicker";
 
 const Dashboard = () => {
 	return (
@@ -14,7 +14,7 @@ const Dashboard = () => {
 			<div className={classes.pickersWrap}>
 				<div className={classes.pickersBlock}>
 					<h3>Filter</h3>
-					<DateAndTimePickers externalStyles={classes.pickers} />
+					<Daterangepicker externalStyles={classes.pickers} />
 				</div>
 			</div>
 			<div className={classes.innerContent}>

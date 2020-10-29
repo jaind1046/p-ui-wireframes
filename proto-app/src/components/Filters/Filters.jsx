@@ -10,8 +10,8 @@ import Button from "../UI/Button/Button";
 import Popup from "../UI/Popup/Popup";
 import PopupFilter from "../UI/PopupFilter/PopupFilter";
 import SelectedFilter from "../UI/SelectedFilter/SelectedFilter";
-import DateAndTimePickers from "../UI/DateAndTimePickers/DateAndTimePickers";
 import Input from "../UI/Input/Input";
+import Daterangepicker from "../UI/Daterangepicker/Daterangepicker";
 
 const Filters = ({ popupIsOpen, changeVisibilityPopup }) => {
 	const [openFilterRow, setOpenFilterRow] = useState(false);
@@ -59,25 +59,36 @@ const Filters = ({ popupIsOpen, changeVisibilityPopup }) => {
 			name: "File ID",
 			onHoverButtonHandler: () => {
 				setOpenFilter(null);
-				setOpenFileId((prevState) => !prevState);
+				setOpenFileId(true);
 			},
 		},
 	];
 
 	const openFilterRowHandler = () => {
-		setOpenFilterRow((prevState) => !prevState);
+		setOpenFilterRow((prev) => !prev);
 		changeVisibilityPopup(false);
 		setOpenFilter(null);
 	};
 
-	const openPopupHandler = () => {
-		changeVisibilityPopup((prevState) => !prevState);
+	const clickOnAddFilterButton = () => {
+		changeVisibilityPopup((prev) => !prev);
+		setOpenFileId(false);
 		setOpenFilter(null);
+	};
+
+	const openFilterHoverHandler = () => {
+		changeVisibilityPopup(true);
 	};
 
 	const closePopupHoverHandler = () => {
 		changeVisibilityPopup(false);
-		setOpenFilter(null);
+	};
+
+	const closeFilterHoverHandler = () => {
+		if (!popupIsOpen) {
+			setOpenFilter(null);
+		}
+		changeVisibilityPopup(false);
 	};
 
 	const inputChangedHandler = (inputValue) => {
@@ -146,7 +157,7 @@ const Filters = ({ popupIsOpen, changeVisibilityPopup }) => {
 						className={clsArrow.join(" ")}
 					/>
 				</div>
-				<DateAndTimePickers externalStyles={classes.pickers} />
+				<Daterangepicker externalStyles={classes.pickers} />
 				<div className={classes.footer}>
 					<div className={clsList.join(" ")}>
 						{openFilterRow && (
@@ -158,7 +169,7 @@ const Filters = ({ popupIsOpen, changeVisibilityPopup }) => {
 							<Button
 								buttonType={"button"}
 								externalStyles={classes.addFilter}
-								onButtonClick={openPopupHandler}
+								onButtonClick={clickOnAddFilterButton}
 							>
 								+ Add Filter
 							</Button>
@@ -172,15 +183,15 @@ const Filters = ({ popupIsOpen, changeVisibilityPopup }) => {
 							links={filterList}
 							externalStyles={classes.popup}
 							openPopupHover={() => changeVisibilityPopup(true)}
-							closePopupHover={() => changeVisibilityPopup(false)}
+							closePopupHover={closePopupHoverHandler}
 						/>
 						{openFilter && (
 							<PopupFilter
 								filter={filter}
 								selectedFilters={selectedFilters}
 								externalStyles={filterStyle}
-								openPopupHover={() => changeVisibilityPopup(true)}
-								closePopupHover={closePopupHoverHandler}
+								openPopupHover={openFilterHoverHandler}
+								closePopupHover={closeFilterHoverHandler}
 							/>
 						)}
 
@@ -188,7 +199,8 @@ const Filters = ({ popupIsOpen, changeVisibilityPopup }) => {
 							<form
 								className={classes.fileId}
 								onSubmit={submitHandler}
-								onMouseEnter={() => changeVisibilityPopup(true)}
+								onMouseEnter={openFilterHoverHandler}
+								onMouseLeave={closeFilterHoverHandler}
 							>
 								<Input
 									type="text"
