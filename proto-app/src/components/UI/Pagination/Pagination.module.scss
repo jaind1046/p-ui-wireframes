@@ -41,6 +41,8 @@
 			border-radius: 4px;
 
 			cursor: pointer;
+
+			outline: none;
 		}
 		&::after {
 			content: "";
@@ -83,6 +85,8 @@
 				background-repeat: no-repeat;
 				background-position: center center;
 				cursor: pointer;
+
+				outline: none;
 
 				&:hover {
 					background-color: #e5f1f5;
@@ -137,6 +141,8 @@
 			background-color: transparent;
 			border: 0;
 			cursor: pointer;
+
+			outline: none;
 		}
 	}
 }
