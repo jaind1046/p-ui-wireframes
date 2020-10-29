@@ -1,166 +1,77 @@
 import React, { useState, useEffect } from "react";
+import ChartistGraph from "react-chartist";
 
-import { Pie } from "react-chartjs-2";
+import "./pieChart.scss";
 
 const PieChart = () => {
-	//const [chartData, setChartData] = useState({});
+	let data = {
+		series: [
+			{ value: 87420, name: "Safe", className: "safe" },
+			{ value: 43823, name: "Blocked", className: "blocked" },
+			{ value: 313, name: "Dangerous", className: "dangerous" },
+			{ value: 1170, name: "Unclassified", className: "unclassified" },
+		],
+	};
 
-	//const chart = () => {
-	//	setChartData({
-	//		labels: ["Safe", "Blocked", "Dangerous", "Unclassified"],
-	//		datasets: [
-	//			{
-	//				data: [87420, 43823, 313, 1770],
-	//				backgroundColor: ["#7394ca", "#e1974e", "#818787", "#ccc374"],
-	//			},
-	//		],
-	//	});
-	//};
+	data.series.map((d) => {
+		if (d.value < 10000) {
+			console.log(d);
+		}
+	});
 
-	//useEffect(() => {
-	//	chart();
-	//}, []);
+	let options = {
+		width: "500px",
+		height: "500px",
+		donut: false,
+
+		labelPosition: "inside", // or 'outside'
+
+		chartPadding: 80,
+		//labelOffset: 140,
+		//showLabel: false,
+		labelDirection: "neutral", // 'explode' or 'implode'
+	};
+
+	let responsiveOptions = [
+		//[
+		//	"screen and (min-width: 940px)",
+		//	{
+		//		chartPadding: 80,
+		//		labelOffset: 110,
+		//		labelInterpolationFnc: function (value) {
+		//			return value;
+		//		},
+		//	},
+		//],
+		[
+			//"screen and (min-width: 1024px)",
+			{
+				//labelOffset: 80,
+				//chartPadding: 0,
+			},
+		],
+	];
+
+	let type = "Pie";
 
 	return (
 		<div
-			style={{
-				width: "50rem",
-
-				position: "relative",
-				padding: "3rem 3rem 6rem 3rem",
-			}}
+			style={
+				{
+					//width: "50rem",
+					//position: "relative",
+					//padding: "3rem 3rem 6rem 3rem",
+				}
+			}
 		>
-			{/*<ReactSnap>
-				{(s) => {
-					s.circle(150, 150, 100);
-				}}
-			</ReactSnap>*/}
-			{/*<Pie
-				type="pie"
-				data={chartData}
-				options={{
-					hover: {
-						animationDuration: 0,
-					},
-					showAllTooltips: true,
-					tooltips: {
-						//callbacks: {
-						//	label: function (tooltipItem, data) {
-						//		var label =
-						//			data.datasets[tooltipItem.datasetIndex].label || "";
-						//		if (label) {
-						//			label += ": ";
-						//		}
-						//		label += Math.round(tooltipItem.yLabel * 100) / 100;
-						//		return label;
-						//	},
-						//},
-					},
-
-					//animation: {
-					//	duration: 0,
-					//},
-
-					legend: {
-						//display: false,
-						position: "bottom",
-
-						labels: {
-							padding: 10,
-							boxWidth: 10,
-						},
-					},
-					//tooltips: {
-					//	enabled: false,
-					//	custom: function (tooltipModel) {
-					//		// Tooltip Element
-					//		var tooltipEl = document.getElementById("chartjs-tooltip");
-
-					//		// Create element on first render
-					//		if (!tooltipEl) {
-					//			tooltipEl = document.createElement("div");
-					//			tooltipEl.id = "chartjs-tooltip";
-					//			tooltipEl.innerHTML = "<table></table>";
-					//			document.body.appendChild(tooltipEl);
-					//		}
-
-					//		// Hide if no tooltip
-					//		if (tooltipModel.opacity === 0) {
-					//			tooltipEl.style.opacity = 0;
-					//			return;
-					//		}
-
-					//		// Set caret Position
-					//		tooltipEl.classList.remove("above", "below", "no-transform");
-					//		if (tooltipModel.yAlign) {
-					//			tooltipEl.classList.add(tooltipModel.yAlign);
-					//		} else {
-					//			tooltipEl.classList.add("no-transform");
-					//		}
-
-					//		function getBody(bodyItem) {
-					//			return bodyItem.lines;
-					//		}
-
-					//		// Set Text
-					//		if (tooltipModel.body) {
-					//			var titleLines = tooltipModel.title || [];
-					//			var bodyLines = tooltipModel.body.map(getBody);
-
-					//			var innerHtml = "<thead>";
-
-					//			titleLines.forEach(function (title) {
-					//				innerHtml += "<tr><th>" + title + "</th></tr>";
-					//			});
-					//			innerHtml += "</thead><tbody>";
-
-					//			bodyLines.forEach(function (body, i) {
-					//				var colors = tooltipModel.labelColors[i];
-					//				var style = "background:" + colors.backgroundColor;
-					//				style += "; border-color:" + colors.borderColor;
-					//				style += "; border-width: 2px";
-					//				var span = '<span style="' + style + '"></span>';
-					//				innerHtml += "<tr><td>" + span + body + "</td></tr>";
-					//			});
-					//			innerHtml += "</tbody>";
-
-					//			var tableRoot = tooltipEl.querySelector("table");
-					//			tableRoot.innerHTML = innerHtml;
-					//		}
-
-					//		// `this` will be the overall tooltip
-					//		var position = this._chart.canvas.getBoundingClientRect();
-
-					//		// Display, position, and set styles for font
-					//		tooltipEl.style.opacity = 1;
-					//		tooltipEl.style.position = "absolute";
-					//		tooltipEl.style.left =
-					//			position.left +
-					//			window.pageXOffset +
-					//			tooltipModel.caretX +
-					//			"px";
-					//		tooltipEl.style.top =
-					//			position.top +
-					//			window.pageYOffset +
-					//			tooltipModel.caretY +
-					//			"px";
-					//		tooltipEl.style.fontFamily = tooltipModel._bodyFontFamily;
-					//		tooltipEl.style.fontSize = tooltipModel.bodyFontSize + "px";
-					//		tooltipEl.style.fontStyle = tooltipModel._bodyFontStyle;
-					//		tooltipEl.style.padding =
-					//			tooltipModel.yPadding + "px " + tooltipModel.xPadding + "px";
-					//		tooltipEl.style.pointerEvents = "none";
-					//	},
-					//},
-					scales: {
-						yAxes: [
-							{
-								display: false,
-							},
-						],
-					},
-				}}
-			/>*/}
+			<div>
+				<ChartistGraph
+					data={data}
+					options={options}
+					type={type}
+					responsiveOptions={responsiveOptions}
+				/>
+			</div>
 		</div>
 	);
 };

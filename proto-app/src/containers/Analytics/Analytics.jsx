@@ -3,7 +3,9 @@ import React from "react";
 import classes from "./Analytics.module.scss";
 
 import LineChart from "../../components/UI/Charts/LineChart/LineChart";
-import PieChart from "../../components/UI/Charts/PieChart/PieChart";
+//import PieChart from "../../components/UI/Charts/PieChart/PieChart";
+import PieChart from "../../components/UI/Charts/PieChart2/PieChart2";
+
 import InfoBlock from "../../components/UI/InfoBlock/InfoBlock";
 import Daterangepicker from "../../components/UI/Daterangepicker/Daterangepicker";
 
@@ -24,9 +26,9 @@ const Analytics = () => {
 						<InfoBlock title={"Total ICAP requests"} sum={"213,596"} />
 						<InfoBlock title={"Max processed files/s"} sum={"75,491"} />
 					</div>
-					<div className={classes.pieChart}>
-						<PieChart />
-					</div>
+					{/*<div className={classes.pieChart}>*/}
+					<PieChart />
+					{/*</div>*/}
 				</div>
 				<div className={classes.lineChart}>
 					<LineChart />
