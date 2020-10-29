@@ -165,7 +165,9 @@ const FileDrop = () => {
 							accept={accept}
 							loading={loading}
 						>
-							<div className={classes.message}>Drop a file here</div>
+							<div className={classes.message}>
+								Drop a file here to have it processed by Glasswall CDR
+							</div>
 							<div className={[classes.message, classes.reject].join(" ")}>
 								Please use a supported file type
 							</div>

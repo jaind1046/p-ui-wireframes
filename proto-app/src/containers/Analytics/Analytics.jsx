@@ -1,15 +1,15 @@
 import React from "react";
 
-import classes from "./Dashboard.module.scss";
+import classes from "./Analytics.module.scss";
 
 import LineChart from "../../components/UI/Charts/LineChart/LineChart";
 import PieChart from "../../components/UI/Charts/PieChart/PieChart";
 import InfoBlock from "../../components/UI/InfoBlock/InfoBlock";
 import Daterangepicker from "../../components/UI/Daterangepicker/Daterangepicker";
 
-const Dashboard = () => {
+const Analytics = () => {
 	return (
-		<article className={classes.Dashboard}>
+		<article className={classes.Analytics}>
 			<div className={classes.top}>ICAP requests</div>
 			<div className={classes.pickersWrap}>
 				<div className={classes.pickersBlock}>
@@ -36,4 +36,4 @@ const Dashboard = () => {
 	);
 };
 
-export default Dashboard;
+export default Analytics;

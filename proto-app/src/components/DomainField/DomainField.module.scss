@@ -5,15 +5,15 @@
 		padding: 1rem;
 
 		font-size: 1.2rem;
-		color: #196480;
+		color: #0c3450;
 		border: none;
 	}
 
 	tbody {
-		border-top: 1px solid #54e0e8;
+		border-top: 1px solid #4592b0;
 
 		tr:last-child {
-			border-bottom: 1px solid #54e0e8;
+			border-bottom: 1px solid #4592b0;
 		}
 	}
 
@@ -44,11 +44,16 @@
 			border: 0;
 
 			padding-left: 1rem;
+
+			&:last-child {
+				white-space: nowrap;
+				width: 20%;
+			}
 		}
 
 		svg {
-			width: 1.5rem;
-			margin-right: 5rem;
+			width: 1.6rem;
+			margin-right: 2rem;
 		}
 
 		input {

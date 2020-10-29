@@ -20,29 +20,33 @@ const Pagination = () => {
 					<button
 						className={classes.firstPage}
 						data-dt-idx="2"
-						tabIndex="0"
+						tabindex="0"
 					></button>
 					<button
 						className={classes.previousPage}
 						data-dt-idx="0"
-						tabIndex="0"
+						tabindex="0"
 					></button>
 					<div>
 						<button className={classes.numbers} disabled="0">
 							1
 						</button>
 					</div>
-					<button className={classes.nextPage} tabIndex="0"></button>
+					<button
+						className={classes.nextPage}
+						data-dt-idx="2"
+						tabindex="0"
+					></button>
 					<button
 						className={classes.lastPage}
 						data-dt-idx="2"
-						tabIndex="0"
+						tabindex="0"
 					></button>
 				</div>
 			</div>
 			<div className={classes.goTo}>
-				Go to page: <input type="text" />
-				<button>Go</button>
+				Go to page: <input type="text" class="custom-paginator-goto" />
+				<button class="custom-paginator-goto-button">Go</button>
 			</div>
 		</div>
 	);

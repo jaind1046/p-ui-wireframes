@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { CSSTransition } from "react-transition-group";
+
 import {
 	Table,
 	TableHead,
@@ -26,7 +28,7 @@ const History = ({ setPrevPolicy, isCurrent }) => {
 				key={id}
 				id={id}
 				isCurrent={isCurrent}
-				openModalPreviousPolicyHandler={setModalIsOpen}
+				openModalPreviousPolicyHandler={() => setModalIsOpen(true)}
 				onActivePrevPolicyHandler={setPrevPolicy}
 				timestamp={timestamp}
 				updatedBy={userEmail}
@@ -49,14 +51,36 @@ const History = ({ setPrevPolicy, isCurrent }) => {
 					<Pagination />
 				</div>
 			</div>
-			{modalIsOpen && (
-				<>
-					<Modal onCloseHandler={() => setModalIsOpen(false)}>
-						<HistoryInfo prevPolicy={previously} />
-					</Modal>
-					<Backdrop onClickOutside={() => setModalIsOpen(false)} />
-				</>
-			)}
+			<CSSTransition
+				in={modalIsOpen}
+				timeout={300}
+				mountOnEnter
+				unmountOnExit
+				classNames={{
+					enter: classes.openPopupEnter,
+					enterActive: classes.openPopupEnterActive,
+					exit: classes.closePopupExit,
+					exitActive: classes.closePopupExitActive,
+				}}
+			>
+				<Modal onCloseHandler={() => setModalIsOpen(false)}>
+					<HistoryInfo prevPolicy={previously} />
+				</Modal>
+			</CSSTransition>
+			<CSSTransition
+				in={modalIsOpen}
+				timeout={300}
+				mountOnEnter
+				unmountOnExit
+				classNames={{
+					enter: classes.openBackdropEnter,
+					enterActive: classes.openBackdropEnterActive,
+					exit: classes.closeBackdropExit,
+					exitActive: classes.closeBackdropExitActive,
+				}}
+			>
+				<Backdrop onClickOutside={() => setModalIsOpen(false)} />
+			</CSSTransition>
 		</>
 	);
 };
