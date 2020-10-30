@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import classes from "./Analytics.module.scss";
 
@@ -8,14 +8,39 @@ import PieChart from "../../components/UI/Charts/PieChart/PieChart";
 import InfoBlock from "../../components/UI/InfoBlock/InfoBlock";
 import Daterangepicker from "../../components/UI/Daterangepicker/Daterangepicker";
 
+import dataChart from "../../data/charts/dataChart.json";
+
 const Analytics = () => {
+	const [data, setData] = useState(dataChart);
+
+	const changeChartData = ({ start, end }) => {
+		const moment = end.diff(start, "hours");
+		switch (moment) {
+			case 1:
+				setData(dataChart.slice(0, 2));
+				break;
+			case 12:
+				setData(dataChart.slice(0, 12));
+				break;
+			case 24:
+				setData(dataChart.slice(0, 24));
+				break;
+			default:
+				setData(dataChart);
+				break;
+		}
+	};
+
 	return (
 		<article className={classes.Analytics}>
 			<div className={classes.top}>ICAP requests</div>
 			<div className={classes.pickersWrap}>
 				<div className={classes.pickersBlock}>
 					<h3>Filter</h3>
-					<Daterangepicker externalStyles={classes.pickers} />
+					<Daterangepicker
+						externalStyles={classes.pickers}
+						onCangeChartsData={changeChartData}
+					/>
 				</div>
 			</div>
 			<div className={classes.innerContent}>
@@ -25,10 +50,10 @@ const Analytics = () => {
 						<InfoBlock title={"Total ICAP requests"} sum={"213,596"} />
 						<InfoBlock title={"Max processed files/s"} sum={"75,491"} />
 					</div>
-					<PieChart />
+					<PieChart data={data} />
 				</div>
 				<div className={classes.lineChart}>
-					<LineChart />
+					<LineChart data={data} />
 				</div>
 			</div>
 		</article>

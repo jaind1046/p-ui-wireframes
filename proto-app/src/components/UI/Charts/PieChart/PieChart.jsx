@@ -3,12 +3,40 @@ import { PieChart, Pie, Legend } from "recharts";
 
 import "./pieGraph.scss";
 
-const PieGraph = () => {
-	const data = [
-		{ value: 87420, name: "Safe", fill: "#7394ca" },
-		{ value: 43823, name: "Blocked", fill: " #e1974e" },
-		{ value: 313, name: "Dangerous", fill: "#818787" },
-		{ value: 1770, name: "Unclassified", fill: "#ccc374" },
+const PieGraph = ({ data }) => {
+	const sumValues = (dataChart, value) => {
+		return dataChart.reduce(
+			(accumulator, currentValue) => accumulator + currentValue[value],
+			0
+		);
+	};
+
+	const updatedData = [
+		{
+			value: sumValues(data, "safe"),
+			name: "Safe",
+			fill: "#6262B7",
+		},
+		{
+			value: sumValues(data, "blocked"),
+			name: "Blocked",
+			fill: " #e1974e",
+		},
+		{
+			value: sumValues(data, "dangerous"),
+			name: "Dangerous",
+			fill: "#EABE50",
+		},
+		{
+			value: sumValues(data, "unclassified"),
+			name: "Unclassified",
+			fill: "#4C9BCC",
+		},
+		{
+			value: sumValues(data, "checked"),
+			name: "Checked",
+			fill: "#7A7A7A",
+		},
 	];
 
 	const RADIAN = Math.PI / 180;
@@ -74,7 +102,7 @@ const PieGraph = () => {
 	return (
 		<PieChart width={400} height={300}>
 			<Pie
-				data={data}
+				data={updatedData}
 				cx="50%"
 				cy="50%"
 				outerRadius={100}
