@@ -23,8 +23,8 @@ import ChangePassword from "../../ChangePassword/ChangePassword";
 
 const navLinks = [
 	{
-		link: "/dashboard",
-		name: "Dashboard",
+		link: "/analytics",
+		name: "Analytics",
 		icon: dashIcon,
 		id: "id-1",
 		exact: true,
@@ -77,7 +77,6 @@ const Toolbar = ({ expanded, navExpandedHandler }) => {
 			name: "Change password",
 			icon: changePassIcon,
 			onClickButtonHandler: () => {
-				console.log("Change password");
 				setIsOpenPopup(false);
 				openChangePass();
 			},
@@ -111,7 +110,6 @@ const Toolbar = ({ expanded, navExpandedHandler }) => {
 				classNames={{
 					enter: classes.openPopupEnter,
 					enterActive: classes.openPopupEnterActive,
-					emterDone: classes.openPopupEnterDone,
 					exit: classes.closePopupExit,
 					exitActive: classes.closePopupExitActive,
 					exitDone: classes.closePopupExitDone,

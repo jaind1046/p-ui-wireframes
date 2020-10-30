@@ -19,6 +19,7 @@ import {
 import FileRow from "./FileRow/FileRow";
 import Filters from "../../components/Filters/Filters";
 import Backdrop from "../../components/UI/Backdrop/Backdrop";
+import Pagination from "../../components/UI/Pagination/Pagination";
 
 const RequestHistory = () => {
 	const [sortedRows, setSortedRows] = useState(null);
@@ -159,6 +160,7 @@ const RequestHistory = () => {
 						{sortedRows || rows}
 					</TableBody>
 				</Table>
+				<Pagination />
 			</div>
 			{openModal && (
 				<>

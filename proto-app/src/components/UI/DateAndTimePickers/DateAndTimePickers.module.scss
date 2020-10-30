@@ -32,11 +32,16 @@
 		cursor: pointer;
 	}
 	.popup {
-		top: 3rem;
-		left: 12rem;
+		top: 2rem;
+		left: -4rem;
+
+		width: 23rem;
 
 		button {
+			width: 100%;
+
 			margin-bottom: 1rem;
+			padding: 0 1rem;
 			transition: all 0.2s ease-in-out;
 
 			&:hover {
@@ -62,7 +67,7 @@
 		opacity: 0;
 	}
 	to {
-		top: 3rem;
+		top: 2rem;
 		opacity: 1;
 	}
 }

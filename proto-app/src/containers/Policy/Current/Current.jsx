@@ -31,34 +31,24 @@ const Current = ({
 	return (
 		<div className={classes.Current}>
 			<div className={classes.header}>
-				<div className={classes.table}>
-					<Table>
-						<TableHead>
-							<TableRow>
-								<TableCell>Timestamp</TableCell>
-								<TableCell>Updated By</TableCell>
-							</TableRow>
-						</TableHead>
-						<TableBody className={classes.tbody}>
-							<TableRow>
-								<TableCell
-									component="th"
-									scope="row"
-									id={currentPolicy ? id : policy.id}
-								>
-									{currentPolicy ? timestamp : policy.timestamp}
-								</TableCell>
-								<TableCell
-									component="th"
-									scope="row"
-									id={currentPolicy ? id : policy.id}
-								>
-									{currentPolicy ? email : policy.userEmail}
-								</TableCell>
-							</TableRow>
-						</TableBody>
-					</Table>
-				</div>
+				<Table className={classes.table}>
+					<TableHead>
+						<TableRow>
+							<TableCell>Timestamp</TableCell>
+							<TableCell>Updated By</TableCell>
+						</TableRow>
+					</TableHead>
+					<TableBody className={classes.tbody}>
+						<TableRow>
+							<TableCell id={currentPolicy ? id : policy.id}>
+								{currentPolicy ? timestamp : policy.timestamp}
+							</TableCell>
+							<TableCell id={currentPolicy ? id : policy.id}>
+								{currentPolicy ? email : policy.userEmail}
+							</TableCell>
+						</TableRow>
+					</TableBody>
+				</Table>
 				{isPolicyChanged && (
 					<div className={classes.buttons}>
 						<Button
@@ -77,9 +67,9 @@ const Current = ({
 				)}
 			</div>
 			<div className={classes.innerContent}>
-				<h2>Content Flags</h2>
-				<div className={classes.toggleBlock}>
-					<div>
+				<h2 className={classes.head}>Content Flags</h2>
+				<div className={classes.togglesBlock}>
+					<div className={classes.block}>
 						<h2>Word</h2>
 						<CurrentRow
 							block="word"
@@ -87,7 +77,7 @@ const Current = ({
 							onChangeHandler={changeToggle}
 						/>
 					</div>
-					<div>
+					<div className={classes.block}>
 						<h2>Excel</h2>
 						<CurrentRow
 							block="excel"
@@ -95,7 +85,7 @@ const Current = ({
 							onChangeHandler={changeToggle}
 						/>
 					</div>
-					<div>
+					<div className={classes.block}>
 						<h2>Powerpoint</h2>
 						<CurrentRow
 							block="powerpoint"
@@ -103,7 +93,7 @@ const Current = ({
 							onChangeHandler={changeToggle}
 						/>
 					</div>
-					<div>
+					<div className={classes.block}>
 						<h2>PDF</h2>
 						<CurrentRow
 							block="pdf"
