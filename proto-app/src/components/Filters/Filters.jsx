@@ -91,11 +91,6 @@ const Filters = ({ popupIsOpen, changeVisibilityPopup }) => {
 		changeVisibilityPopup(false);
 	};
 
-	const closeFilterRowHandler = () => {
-		changeVisibilityPopup(false);
-		setOpenFilter(null);
-	};
-
 	const inputChangedHandler = (inputValue) => {
 		setFileIdValue(inputValue);
 		setIsValid(checkValidity(inputValue));
@@ -224,7 +219,6 @@ const Filters = ({ popupIsOpen, changeVisibilityPopup }) => {
 									type="submit"
 									className={classes.addButton}
 									disabled={!isValid}
-									onClick={closeFilterRowHandler}
 								>
 									+ ADD
 								</button>

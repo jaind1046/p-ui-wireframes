@@ -33,7 +33,6 @@ const Daterangepicker = ({ externalStyles }) => {
 						format: "DD/MM/YYYY hh:mm A",
 					},
 					ranges: {
-						//Today: [moment().toDate(), moment().toDate()],
 						"1 Hour": [
 							moment().subtract(1, "hour").toDate(),
 							moment().toDate(),

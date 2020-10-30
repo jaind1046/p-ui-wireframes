@@ -1,72 +1,77 @@
 import React, { useState, useEffect } from "react";
+import ChartistGraph from "react-chartist";
 
-import { Pie } from "react-chartjs-2";
+import "./pieChart.scss";
 
 const PieChart = () => {
-	const [chartData, setChartData] = useState({});
-
-	const chart = () => {
-		setChartData({
-			labels: ["Safe", "Blocked", "Dangerous", "Unclassified"],
-			datasets: [
-				{
-					data: [87420, 43823, 313, 1770],
-					backgroundColor: ["#7394ca", "#e1974e", "#818787", "#ccc374"],
-				},
-			],
-		});
+	let data = {
+		series: [
+			{ value: 87420, name: "Safe", className: "safe" },
+			{ value: 43823, name: "Blocked", className: "blocked" },
+			{ value: 313, name: "Dangerous", className: "dangerous" },
+			{ value: 1170, name: "Unclassified", className: "unclassified" },
+		],
 	};
 
-	useEffect(() => {
-		chart();
-	}, []);
+	data.series.map((d) => {
+		if (d.value < 10000) {
+			console.log(d);
+		}
+	});
+
+	let options = {
+		width: "500px",
+		height: "500px",
+		donut: false,
+
+		labelPosition: "inside", // or 'outside'
+
+		chartPadding: 80,
+		//labelOffset: 140,
+		//showLabel: false,
+		labelDirection: "neutral", // 'explode' or 'implode'
+	};
+
+	let responsiveOptions = [
+		//[
+		//	"screen and (min-width: 940px)",
+		//	{
+		//		chartPadding: 80,
+		//		labelOffset: 110,
+		//		labelInterpolationFnc: function (value) {
+		//			return value;
+		//		},
+		//	},
+		//],
+		[
+			//"screen and (min-width: 1024px)",
+			{
+				//labelOffset: 80,
+				//chartPadding: 0,
+			},
+		],
+	];
+
+	let type = "Pie";
 
 	return (
 		<div
-			style={{
-				width: "50rem",
-
-				position: "relative",
-				padding: "3rem 3rem 6rem 3rem",
-			}}
+			style={
+				{
+					//width: "50rem",
+					//position: "relative",
+					//padding: "3rem 3rem 6rem 3rem",
+				}
+			}
 		>
-			<Pie
-				type="pie"
-				data={chartData}
-				options={{
-					legend: {
-						position: "bottom",
-
-						labels: {
-							padding: 10,
-							boxWidth: 10,
-						},
-					},
-					tooltips: {
-						//enabled: false,
-						backgroundColor: "#FFF",
-						titleFontSize: 16,
-						titleFontColor: "#0066ff",
-						bodyFontColor: "#000",
-						bodyFontSize: 14,
-						displayColors: true,
-						//intersect: false,
-					},
-					scales: {
-						yAxes: [
-							{
-								ticks: {
-									min: 0,
-									max: 1,
-									maxTicksLimit: 1,
-									autoSkip: true,
-									beginAtZero: true,
-								},
-							},
-						],
-					},
-				}}
-			/>
+			<div>
+				<ChartistGraph
+					data={data}
+					options={options}
+					type={type}
+					responsiveOptions={responsiveOptions}
+				/>
+			</div>
 		</div>
 	);
 };
