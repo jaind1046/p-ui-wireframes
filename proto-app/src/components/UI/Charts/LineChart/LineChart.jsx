@@ -1,247 +1,79 @@
-import React, { useState, useEffect } from "react";
-import { Line } from "react-chartjs-2";
-const LineChart = () => {
-	const [chartData, setChartData] = useState({});
+import React from "react";
+import {
+	ResponsiveContainer,
+	LineChart,
+	Line,
+	CartesianGrid,
+	Legend,
+	XAxis,
+	YAxis,
+} from "recharts";
 
-	const chart = () => {
-		setChartData({
-			labels: [
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-			],
-			datasets: [
-				{
-					label: "Unclassified",
-
-					data: [
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						300,
-						200,
-						300,
-						200,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-					],
-					lineTension: 0,
-					backgroundColor: ["transparent"],
-					borderColor: "#818787",
-					borderWidth: 4,
-				},
-				{
-					label: "Dangerous",
-					data: [
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-					],
-					lineTension: 0,
-					backgroundColor: ["transparent"],
-					borderColor: "#e1974e",
-					borderWidth: 4,
-				},
-				{
-					label: "Checked",
-					data: [
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						500,
-						12000,
-						18000,
-						21000,
-						10000,
-						20000,
-						18000,
-						16000,
-						10000,
-						3000,
-						500,
-						0,
-						0,
-						0,
-						0,
-						0,
-					],
-					lineTension: 0,
-					backgroundColor: ["transparent"],
-					borderColor: "#d9d9d9",
-					borderWidth: 4,
-				},
-				{
-					label: "Blocked",
-					data: [
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						5000,
-						6000,
-						7000,
-						2000,
-						8000,
-						8000,
-						7000,
-						1000,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-					],
-					lineTension: 0,
-					backgroundColor: ["transparent"],
-					borderColor: "#e1974e",
-					borderWidth: 4,
-				},
-				{
-					label: "Safe",
-					data: [
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						500,
-						8000,
-						11000,
-						13000,
-						7000,
-						11000,
-						10000,
-						9000,
-						8000,
-						4000,
-						1000,
-						0,
-						0,
-						0,
-						0,
-					],
-					lineTension: 0,
-					backgroundColor: ["transparent"],
-					borderColor: "#7394ca",
-					borderWidth: 4,
-				},
-			],
-		});
-	};
-
-	useEffect(() => {
-		chart();
-	}, []);
+const LineGraph = ({ data }) => {
+	const dotStyle = { strokeWidth: 5.5, r: 5.5 };
 
 	return (
-		<div
-			style={{
-				width: "100%",
-				position: "relative",
-			}}
-		>
-			<Line
-				type="line"
-				data={chartData}
-				height={100}
-				options={{
-					legend: {
-						position: "bottom",
-
-						labels: {
-							padding: 10,
-							boxWidth: 10,
-						},
-					},
-					scales: {
-						yAxes: [
-							{
-								ticks: {
-									min: 0,
-									max: 25000,
-									autoSkip: true,
-									maxTicksLimit: 6,
-									beginAtZero: true,
-								},
-							},
-						],
-					},
-					layout: {
-						padding: {
-							left: 50,
-							right: 50,
-							top: 50,
-							bottom: 50,
-						},
-					},
-				}}
-			/>
-		</div>
+		<ResponsiveContainer>
+			<LineChart
+				width={600}
+				height={300}
+				data={data}
+				margin={{ top: 5, right: 30, left: 20, bottom: 25 }}
+			>
+				<CartesianGrid stroke="#ccc" vertical={false} />
+				<XAxis hide={true} />
+				<YAxis
+					axisLine={false}
+					type="number"
+					//domain={["dataMin", 25000]}
+					tickCount={6}
+					tick={{ transform: "translate(-10, 0)", fontSize: "14px" }}
+					tickLine={false}
+				/>
+				<Legend iconSize={34} wrapperStyle={{ bottom: 0 }} />
+				<Line
+					dataKey="safe"
+					name="Safe"
+					stroke="#7394ca"
+					fill="#7394ca"
+					strokeWidth={5}
+					dot={dotStyle}
+				/>
+				<Line
+					dataKey="blocked"
+					name="Blocked"
+					stroke="#e1974e"
+					fill="#e1974e"
+					strokeWidth={5}
+					dot={dotStyle}
+				/>
+				<Line
+					dataKey="checked"
+					name="Checked"
+					stroke="#d9d9d9"
+					fill="#d9d9d9"
+					strokeWidth={5}
+					dot={dotStyle}
+				/>
+				<Line
+					dataKey="dangerous"
+					name="Dangerous"
+					stroke="#E6CC70"
+					fill="#E6CC70"
+					strokeWidth={5}
+					dot={dotStyle}
+				/>
+				<Line
+					dataKey="unclassified"
+					name="Unclassified"
+					stroke="#11b4e4"
+					fill="#11b4e4"
+					strokeWidth={5}
+					dot={dotStyle}
+				/>
+			</LineChart>
+		</ResponsiveContainer>
 	);
 };
 
-export default LineChart;
+export default LineGraph;

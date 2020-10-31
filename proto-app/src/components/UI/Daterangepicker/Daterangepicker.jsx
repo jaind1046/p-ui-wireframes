@@ -6,14 +6,16 @@ import "./daterangepicker.scss";
 
 import classes from "./Daterangepicker.module.scss";
 
-const Daterangepicker = ({ externalStyles }) => {
+const Daterangepicker = ({ externalStyles, onCangeChartsData }) => {
 	const [state, setState] = useState({
 		start: moment().subtract(29, "days"),
 		end: moment(),
 	});
 	const { start, end } = state;
+
 	const handleCallback = (start, end) => {
 		setState({ start, end });
+		onCangeChartsData({ start, end });
 	};
 
 	const label =
