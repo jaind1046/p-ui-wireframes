@@ -1,11 +1,11 @@
 [
   {
     "date": "0",
-    "unclassified": 1,
-    "dangerous": 2,
-    "checked": 200,
-    "blocked": 10,
-    "safe": 130
+    "unclassified": 2,
+    "dangerous": 10,
+    "checked": 100,
+    "blocked": 7,
+    "safe": 50
   },
   {
     "date": "1",
@@ -177,18 +177,18 @@
   },
   {
     "date": "22",
-    "unclassified": 0,
-    "dangerous": 0,
-    "checked": 0,
-    "blocked": 0,
-    "safe": 0
+    "unclassified": 2,
+    "dangerous": 1,
+    "checked": 100,
+    "blocked": 7,
+    "safe": 55
   },
   {
     "date": "23",
-    "unclassified": 0,
-    "dangerous": 0,
-    "checked": 0,
-    "blocked": 0,
-    "safe": 0
+    "unclassified": 2,
+    "dangerous": 10,
+    "checked": 20,
+    "blocked": 7,
+    "safe": 2550
   }
 ]

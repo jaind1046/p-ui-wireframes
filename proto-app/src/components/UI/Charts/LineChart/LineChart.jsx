@@ -9,8 +9,30 @@ import {
 	YAxis,
 } from "recharts";
 
+import colours from "../../../../data/charts/colours.json";
+
 const LineGraph = ({ data }) => {
 	const dotStyle = { strokeWidth: 5.5, r: 5.5 };
+	const lines = colours.map((entry) => {
+		let entries = Object.keys(entry);
+		if (entries.length > 0) {
+			const series = entries[0];
+			const name = series[0].toUpperCase() + series.slice(1).toLowerCase();
+			const colour = entry[series];
+			return (
+				<Line
+					key={series}
+					dataKey={series}
+					name={name}
+					stroke={colour}
+					fill={colour}
+					strokeWidth={5}
+					dot={dotStyle}
+				/>
+			);
+		}
+		return null;
+	}).filter( s => s);
 
 	return (
 		<ResponsiveContainer>
@@ -31,46 +53,7 @@ const LineGraph = ({ data }) => {
 					tickLine={false}
 				/>
 				<Legend iconSize={34} wrapperStyle={{ bottom: 0 }} />
-				<Line
-					dataKey="safe"
-					name="Safe"
-					stroke="#7394ca"
-					fill="#7394ca"
-					strokeWidth={5}
-					dot={dotStyle}
-				/>
-				<Line
-					dataKey="blocked"
-					name="Blocked"
-					stroke="#e1974e"
-					fill="#e1974e"
-					strokeWidth={5}
-					dot={dotStyle}
-				/>
-				<Line
-					dataKey="checked"
-					name="Checked"
-					stroke="#d9d9d9"
-					fill="#d9d9d9"
-					strokeWidth={5}
-					dot={dotStyle}
-				/>
-				<Line
-					dataKey="dangerous"
-					name="Dangerous"
-					stroke="#E6CC70"
-					fill="#E6CC70"
-					strokeWidth={5}
-					dot={dotStyle}
-				/>
-				<Line
-					dataKey="unclassified"
-					name="Unclassified"
-					stroke="#11b4e4"
-					fill="#11b4e4"
-					strokeWidth={5}
-					dot={dotStyle}
-				/>
+				{lines}
 			</LineChart>
 		</ResponsiveContainer>
 	);
