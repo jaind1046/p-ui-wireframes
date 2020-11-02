@@ -1,11 +1,11 @@
 [
   {
     "date": "0",
-    "unclassified": 0,
-    "dangerous": 0,
-    "checked": 0,
-    "blocked": 0,
-    "safe": 0
+    "unclassified": 1,
+    "dangerous": 2,
+    "checked": 200,
+    "blocked": 10,
+    "safe": 130
   },
   {
     "date": "1",
