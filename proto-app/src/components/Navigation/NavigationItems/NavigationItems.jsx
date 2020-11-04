@@ -26,7 +26,7 @@ const NavigationItems = ({ expanded, items, externalStyles }) => {
 				}}
 			>
 				<div>
-					<p>{it.name}</p>
+					<p data-test-id={it.testId}>{it.name}</p>
 				</div>
 			</NavigationItem>
 		);

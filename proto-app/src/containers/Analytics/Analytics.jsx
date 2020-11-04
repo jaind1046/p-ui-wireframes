@@ -50,9 +50,12 @@ const Analytics = () => {
 						<InfoBlock title={"Total ICAP requests"} sum={"213,596"} />
 						<InfoBlock title={"Max processed files/s"} sum={"75,491"} />
 					</div>
-					<PieChart rawData={data} />
+
+					<div data-test-id="pieChart">
+						<PieChart rawData={data} />
+					</div>
 				</div>
-				<div className={classes.lineChart}>
+				<div data-test-id="lineChart" className={classes.lineChart}>
 					<LineChart data={data} />
 				</div>
 			</div>

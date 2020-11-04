@@ -42,7 +42,7 @@ function RenderResults({
 			(sanitisations.length || remediations.length || hasIssues)
 		) {
 			return (
-				<div className={classes.RenderResults}>
+				<div data-test-id="divFileDropResults" className={classes.RenderResults}>
 					<SectionTitle externalStyles={classes.headline}>
 						Analisys Report
 					</SectionTitle>
@@ -50,12 +50,14 @@ function RenderResults({
 					<div className={classes.container}>
 						<ButtonsContainer externalStyles={classes.buttons}>
 							<Button
+								testId="buttonFileDropDownloadPdf"
 								//onButtonClick={() => setShowResult(true)}
 								externalStyles={classes.button}
 							>
 								PDF
 							</Button>
 							<Button
+								testId="buttonFileDropDownloadXml"
 								//onButtonClick={() => setShowResult(true)}
 								externalStyles={classes.button}
 							>

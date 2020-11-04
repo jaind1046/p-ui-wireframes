@@ -27,6 +27,7 @@ const DomainField = ({ name, onChangeInputHandler, disabled }) => {
 				<TableRow className={classes.domainRow}>
 					<TableCell>
 						<Input
+							testId="inputApiUrl"
 							type="text"
 							value={name}
 							onChange={onChangeInputHandler}

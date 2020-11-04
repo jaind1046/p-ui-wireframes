@@ -28,6 +28,7 @@ const navLinks = [
 		icon: dashIcon,
 		id: "id-1",
 		exact: true,
+		testId: "navLinkAnalytics"
 	},
 	{
 		link: "/request-history",
@@ -35,12 +36,14 @@ const navLinks = [
 		icon: transactionIcon,
 		id: "id-2",
 		exact: true,
+		testId: "navLinkRequestHistory"
 	},
 	{
 		link: "/policy",
 		name: "Policy",
 		icon: policy,
 		id: "id-3",
+		testId: "navLinkPolicy"
 	},
 	{ link: "/users", name: "Users", icon: usersIcon, id: "id-4" },
 	{
@@ -48,6 +51,7 @@ const navLinks = [
 		name: "File drop",
 		icon: fileDoropIcon,
 		id: "id-5",
+		testId: "navLinkUsers"
 	},
 ];
 
@@ -69,11 +73,13 @@ const Toolbar = ({ expanded, navExpandedHandler }) => {
 
 	const accountLinks = [
 		{
+			testId: "userLinksButtonLogout",
 			name: "Log out",
 			icon: logoutIcon,
 			onClickButtonHandler: () => logout(),
 		},
 		{
+			testId: "userLinksButtonChangePassword",
 			name: "Change password",
 			icon: changePassIcon,
 			onClickButtonHandler: () => {

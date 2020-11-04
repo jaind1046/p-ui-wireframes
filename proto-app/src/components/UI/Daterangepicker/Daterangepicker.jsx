@@ -51,7 +51,7 @@ const Daterangepicker = ({ externalStyles, onCangeChartsData }) => {
 				}}
 				onCallback={handleCallback}
 			>
-				<div id="reportrange" className={classes.reportrange}>
+				<div data-test-id="dateRangePicker" id="reportrange" className={classes.reportrange}>
 					<span>{label}</span>
 				</div>
 			</DateRangePicker>

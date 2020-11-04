@@ -9,9 +9,10 @@ const Popup = ({
 	onClickButton,
 }) => {
 	const buttonList = links.map(
-		({ name, icon, value, onHoverButtonHandler, onClickButtonHandler }) => {
+		({ testId, name, icon, value, onHoverButtonHandler, onClickButtonHandler }) => {
 			return (
 				<button
+					data-test-id={testId}
 					key={name}
 					value={value}
 					onMouseEnter={onHoverButtonHandler}

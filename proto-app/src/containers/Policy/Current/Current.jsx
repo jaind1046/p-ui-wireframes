@@ -72,6 +72,7 @@ const Current = ({
 					<div className={classes.block}>
 						<h2>Word</h2>
 						<CurrentRow
+							testId="currentPolicySectionWord"
 							block="word"
 							itemList={policyFlags.word}
 							onChangeHandler={changeToggle}
@@ -80,6 +81,7 @@ const Current = ({
 					<div className={classes.block}>
 						<h2>Excel</h2>
 						<CurrentRow
+							testId="currentPolicySectionExcel"
 							block="excel"
 							itemList={policyFlags.excel}
 							onChangeHandler={changeToggle}
@@ -88,6 +90,7 @@ const Current = ({
 					<div className={classes.block}>
 						<h2>Powerpoint</h2>
 						<CurrentRow
+							testId="currentPolicySectionPowerpoint"
 							block="powerpoint"
 							itemList={policyFlags.powerpoint}
 							onChangeHandler={changeToggle}
@@ -96,6 +99,7 @@ const Current = ({
 					<div className={classes.block}>
 						<h2>PDF</h2>
 						<CurrentRow
+							testId="currentPolicySectionPdf"
 							block="pdf"
 							itemList={policyFlags.pdf}
 							onChangeHandler={changeToggle}

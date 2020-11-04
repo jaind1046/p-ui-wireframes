@@ -1,12 +1,12 @@
 [{
-  "blocked": "#e1974e"
+  "Blocked By NCFS": "#D47779"
 }, {
-  "dangerous": "#eabe50"
+  "Blocked By Policy": "#DF9F81"
 }, {
-  "unclassified": "#4c9bcc"
+  "Allowed By Policy": "#91E1F3"
 }, {
-  "checked": "#7A7A7A"
+  "Allowed By NCFS": "#85B5D5"
 }, {
-  "safe": "#6262b7"
+  "safe": "#91CAA8"
 }, {
 }]

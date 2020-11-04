@@ -27,12 +27,13 @@ const FileRow = ({
 				{updatedBy}
 			</TableCell>
 			<TableCell component="th" scope="row" id={id}>
-				<Button onButtonClick={openModalPreviousPolicyHandler}>View</Button>
+				<Button onButtonClick={openModalPreviousPolicyHandler} externalStyles="policyHistoryViewButton">View</Button>
 			</TableCell>
 			<TableCell component="th" scope="row" id={id}>
 				<Button
 					onButtonClick={onActivePrevPolicyHandler}
 					disabled={!isCurrent}
+					externalStyles="policyHistoryActivateButton"
 				>
 					Activate
 				</Button>

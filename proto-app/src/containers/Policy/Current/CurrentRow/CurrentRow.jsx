@@ -3,7 +3,7 @@ import RadioButton from "../../../../components/UI/RadioButton/RadioButton";
 
 import classes from "./CurrentRow.module.scss";
 
-const CurrentRow = ({ itemList, block, onChangeHandler, disabled }) => {
+const CurrentRow = ({ testId, itemList, block, onChangeHandler, disabled }) => {
 	const content = itemList.map((it) => {
 		return (
 			<RadioButton
@@ -19,7 +19,7 @@ const CurrentRow = ({ itemList, block, onChangeHandler, disabled }) => {
 		);
 	});
 
-	return <div className={classes.CurrentRow}>{content}</div>;
+	return <div data-test-id={testId} className={classes.CurrentRow}>{content}</div>;
 };
 
 export default CurrentRow;

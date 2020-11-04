@@ -32,6 +32,7 @@ const TabNav = ({ tabs, isSelectedTab, onSetActiveTabHandler, children }) => {
 			>
 				<li className={clsLink.join(" ")}>
 					<button
+						data-test-id={tab.testId}
 						className={clsButton.join(" ")}
 						onClick={() => onSetActiveTabHandler(tab.name)}
 					>

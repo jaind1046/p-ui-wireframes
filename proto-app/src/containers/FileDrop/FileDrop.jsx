@@ -172,7 +172,7 @@ const FileDrop = () => {
 								Please use a supported file type
 							</div>
 							<div className={[classes.image, classes.imageDrop].join(" ")} />
-							<Button externalStyles={classes.button}>SELECT A FILE</Button>
+							<Button testId="buttonFileDropSelectFile" externalStyles={classes.button}>SELECT A FILE</Button>
 						</StyledDropzone>
 						<div className={classes.infoBlock}>
 							<p>
@@ -183,45 +183,46 @@ const FileDrop = () => {
 						</div>
 					</section>
 				) : (
-					<>
-						<div className={[classes.dropzone, classes.processed].join(" ")}>
-							<div className={classes.results}>
-								<IconButton
-									externalStyles={classes.buttonRefresh}
-									onClick={dropAnotherFile}
-								>
-									<img src={refreshIcon} alt="drop refresh icon" />
-								</IconButton>
-								<div
-									className={[classes.message, classes.messageProcessed].join(
-										" "
-									)}
-								>
-									Your file has been processed
+						<>
+							<div className={[classes.dropzone, classes.processed].join(" ")}>
+								<div className={classes.results}>
+									<IconButton
+										externalStyles={classes.buttonRefresh}
+										onClick={dropAnotherFile}
+									>
+										<img src={refreshIcon} alt="drop refresh icon" />
+									</IconButton>
+									<div
+										className={[classes.message, classes.messageProcessed].join(
+											" "
+										)}
+									>
+										Your file has been processed
 								</div>
-								<div
-									className={[classes.image, classes.imageProcessed].join(
-										" "
-									)}
-								/>
-								<Button
-									onButtonClick={() => setShowResult(true)}
-									externalStyles={classes.button}
-								>
-									VIEW RESULT
+									<div
+										className={[classes.image, classes.imageProcessed].join(
+											" "
+										)}
+									/>
+									<Button
+										testId="buttonFileDropViewResult"
+										onButtonClick={() => setShowResult(true)}
+										externalStyles={classes.button}
+									>
+										VIEW RESULT
 								</Button>
+								</div>
 							</div>
-						</div>
-						<RenderResults
-							file={file}
-							analysisReport={analysisReport}
-							analysisReportString={analysisReportString}
-							validation={validation}
-							onAnotherFile={dropAnotherFile}
-							isShowResult={showResult}
-						/>
-					</>
-				)}
+							<RenderResults
+								file={file}
+								analysisReport={analysisReport}
+								analysisReportString={analysisReportString}
+								validation={validation}
+								onAnotherFile={dropAnotherFile}
+								isShowResult={showResult}
+							/>
+						</>
+					)}
 			</div>
 		</section>
 	);
