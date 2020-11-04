@@ -22,11 +22,7 @@ const UserLink = ({
 			onMouseEnter={openPopup}
 			onMouseLeave={closePopup}
 		>
-			<div
-				style={{
-					backgroundImage: `url(${AccountIcon})`,
-				}}
-			>
+			<div data-test-id="userLink" style={{ backgroundImage: `url(${AccountIcon})` }}>
 				<p className={classes.clip}>{username}</p>
 			</div>
 		</section>

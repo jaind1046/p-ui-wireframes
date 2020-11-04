@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./Button.module.scss";
 
 const Button = ({
+	testId,
 	type,
 	onButtonClick,
 	buttonId,
@@ -13,6 +14,7 @@ const Button = ({
 }) => {
 	return (
 		<button
+			data-test-id={testId}
 			onClick={onButtonClick}
 			className={[classes.button, externalStyles].join(" ")}
 			style={buttonStyle}

@@ -42,6 +42,7 @@ const Filters = ({ popupIsOpen, changeVisibilityPopup }) => {
 
 	const filterList = [
 		{
+			testId: "buttonFilterFileTypes",
 			name: "File Types",
 			onHoverButtonHandler: () => {
 				setOpenFileId(false);
@@ -49,6 +50,7 @@ const Filters = ({ popupIsOpen, changeVisibilityPopup }) => {
 			},
 		},
 		{
+			testId: "buttonFilterRisk",
 			name: "Risk",
 			onHoverButtonHandler: () => {
 				setOpenFileId(false);
@@ -56,6 +58,7 @@ const Filters = ({ popupIsOpen, changeVisibilityPopup }) => {
 			},
 		},
 		{
+			testId: "buttonFilterFileId",
 			name: "File ID",
 			onHoverButtonHandler: () => {
 				setOpenFilter(null);
@@ -147,12 +150,14 @@ const Filters = ({ popupIsOpen, changeVisibilityPopup }) => {
 					<h3 className={classes.head}>Filters</h3>
 
 					<button
+						data-test-id="buttonMoreFilters"
 						className={clsMoreFilters.join(" ")}
 						onClick={openFilterRowHandler}
 					>
 						More Filters...
 					</button>
 					<span
+						data-test-id="moreFiltersArrow"
 						onClick={openFilterRowHandler}
 						className={clsArrow.join(" ")}
 					/>
@@ -167,6 +172,7 @@ const Filters = ({ popupIsOpen, changeVisibilityPopup }) => {
 					{openFilterRow && (
 						<div>
 							<Button
+								testId="addFilterButton"
 								buttonType={"button"}
 								externalStyles={classes.addFilter}
 								onButtonClick={clickOnAddFilterButton}
@@ -187,6 +193,7 @@ const Filters = ({ popupIsOpen, changeVisibilityPopup }) => {
 						/>
 						{openFilter && (
 							<PopupFilter
+								testId={openFilter}
 								filter={filter}
 								selectedFilters={selectedFilters}
 								externalStyles={filterStyle}

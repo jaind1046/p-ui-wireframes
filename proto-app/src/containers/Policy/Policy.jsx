@@ -33,8 +33,8 @@ const Policy = () => {
 	const [selectedTab, setSelectedTab] = useState("Current");
 
 	const tabs = [
-		{ name: "Current", icon: currentPolicyIcon },
-		{ name: "History", icon: previousPolicyIcon },
+		{ testId: "buttonPolicyCurrentTab", name: "Current", icon: currentPolicyIcon },
+		{ testId: "buttonPolicyHistoryTab", name: "History", icon: previousPolicyIcon },
 	];
 
 	return (
