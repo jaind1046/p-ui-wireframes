@@ -7,7 +7,7 @@ const Toggles = ({ nameBlock }) => {
 		<div className={classes.Toggles}>
 			<form method="post" action="">
 				<div className={classes.input}>
-					<input id={`relay-${nameBlock}`} type="radio" name="toggle" />
+					<input data-test-id={`input-${nameBlock}-Relay`} id={`relay-${nameBlock}`} type="radio" name="toggle" />
 					<label htmlFor={`relay-${nameBlock}`}>
 						{" "}
 						<strong>Relay </strong>- The unmodified original file should be
@@ -15,7 +15,7 @@ const Toggles = ({ nameBlock }) => {
 					</label>
 				</div>
 				<div className={classes.input}>
-					<input id={`block-${nameBlock}`} type="radio" name="toggle" />
+					<input data-test-id={`input-${nameBlock}-Block`} id={`block-${nameBlock}`} type="radio" name="toggle" />
 					<label htmlFor={`block-${nameBlock}`}>
 						{" "}
 						<strong>Block </strong>- The original file should be blocked. An
@@ -24,7 +24,7 @@ const Toggles = ({ nameBlock }) => {
 					</label>
 				</div>
 				<div className={classes.input}>
-					<input id={`refer-${nameBlock}`} type="radio" name="toggle" />
+					<input data-test-id={`input-${nameBlock}-Refer`} id={`refer-${nameBlock}`} type="radio" name="toggle" />
 					<label htmlFor={`refer-${nameBlock}`}>
 						{" "}
 						<strong>Refer </strong>- The document it is submitted to the
